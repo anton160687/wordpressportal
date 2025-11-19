@@ -210,6 +210,10 @@
                         'label'    => 'Лес возможностей',
                         'template' => 'forest',
                     ],
+                    'bethday'  => [
+                        'label'    => 'Дни рождения',
+                        'template' => 'bethday',
+                    ],
                 ];
                 ?>
                 <ul id="lk-tab-nav" class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold" role="tablist">
