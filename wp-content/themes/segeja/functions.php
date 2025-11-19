@@ -64,3 +64,62 @@
             return home_url($slug . '/');
         }
     }
+
+    if (!function_exists('segeja_theme_palette')) {
+        /**
+         * Центральное хранилище цветовой палитры темы.
+         *
+         * @return array{button_gradient: string, nav_link: string}
+         */
+        function segeja_theme_palette(): array {
+            return [
+                'button_gradient' => 'linear-gradient(90deg, #197b2c, #58a42a)',
+                'nav_link'        => '#28853a',
+            ];
+        }
+    }
+
+    /**
+     * Вывод CSS-переменных и глобальных стилей на базе палитры.
+     */
+    function segeja_print_theme_palette(): void {
+        $palette = segeja_theme_palette();
+        ?>
+        <style id="segeja-theme-palette">
+            :root {
+                --segeja-button-gradient: <?php echo esc_html( $palette['button_gradient'] ); ?>;
+                --segeja-nav-link: <?php echo esc_html( $palette['nav_link'] ); ?>;
+            }
+
+            .btn.btn-primary,
+            .btn.btn-light-primary,
+            .btn.btn-sm.btn-primary {
+                background-image: var(--segeja-button-gradient) !important;
+                background-color: transparent !important;
+                border-color: transparent !important;
+                color: #ffffff !important;
+            }
+
+            .btn.btn-primary:hover,
+            .btn.btn-light-primary:hover,
+            .btn.btn-sm.btn-primary:hover {
+                filter: brightness(1.05);
+            }
+
+            .desktop-menu__link,
+            .app-sidebar .menu-link,
+            .menu.menu-rounded .menu-link .menu-title,
+            .menu.menu-rounded .menu-link,
+            .menu.menu-column .menu-link {
+                color: var(--segeja-nav-link) !important;
+            }
+
+            .desktop-menu__link:hover,
+            .app-sidebar .menu-link:hover,
+            .menu.menu-rounded .menu-link:hover {
+                color: #1d6a2f !important;
+            }
+        </style>
+        <?php
+    }
+    add_action('wp_head', 'segeja_print_theme_palette', 20);
