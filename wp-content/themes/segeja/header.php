@@ -158,7 +158,29 @@
                                 </div>
                                 <!--end:Menu sub-->
                             </div>
-
+                            <?php
+                            $segeja_header_pages = [
+                                ['slug' => 'about', 'title' => 'О компании'],
+                                ['slug' => 'company-str', 'title' => 'Структура группы'],
+                                ['slug' => 'history', 'title' => 'История'],
+                                ['slug' => 'strategy', 'title' => 'Стратегия'],
+                            ];
+                            $segeja_current_slug = '';
+                            if (is_page()) {
+                                $segeja_current_slug = get_post_field('post_name', get_queried_object_id());
+                            }
+                            foreach ($segeja_header_pages as $page_item) :
+                                $is_active = $segeja_current_slug === $page_item['slug'] ? 'active' : '';
+                                $page_url = segeja_get_page_link($page_item['slug']);
+                                ?>
+                                <!--begin:Menu item-->
+                                <div class="menu-item menu-lg-down-accordion me-0 me-lg-2">
+                                    <a class="menu-link py-3 <?php echo esc_attr($is_active); ?>" href="<?php echo esc_url($page_url); ?>">
+                                        <span class="menu-title"><?php echo esc_html($page_item['title']); ?></span>
+                                    </a>
+                                </div>
+                                <!--end:Menu item-->
+                            <?php endforeach; ?>
                         </div>
                         <!--end::Menu-->
                     </div>

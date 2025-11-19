@@ -38,3 +38,29 @@
             ));
         }
     add_action('init', 'register_my_menus');
+
+    if (!function_exists('segeja_get_page_link')) {
+        /**
+         * Возвращает ссылку на страницу по слагу с запасным вариантом.
+         *
+         * @param string $slug
+         * @param string $fallback
+         *
+         * @return string
+         */
+        function segeja_get_page_link(string $slug, string $fallback = ''): string {
+            $page = get_page_by_path($slug);
+
+            if ($page) {
+                return get_permalink($page->ID);
+            }
+
+            if (!empty($fallback)) {
+                return $fallback;
+            }
+
+            $slug = '/' . ltrim($slug, '/');
+
+            return home_url($slug . '/');
+        }
+    }
