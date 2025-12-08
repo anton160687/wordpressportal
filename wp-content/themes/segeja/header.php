@@ -973,6 +973,7 @@
                             <!--end::User account menu-->
                             <!--end::Menu wrapper-->
                         </div>
+                        <?php endif; ?>
                         <!--end::User menu-->
 
                         <!--begin::Aside toggle-->
