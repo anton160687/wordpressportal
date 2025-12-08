@@ -7,24 +7,346 @@
         <div class="row g-5 gx-xl-10 mb-5 mb-xl-10">
 
             <!--begin::Col-->
-            <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-3 mb-md-5 mb-xl-10">
+            <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-9 mb-md-5 mb-xl-10">
 
-                <!-- Code Weather Forecast rusmeteo.net  -->
-                <link href="https://api.rusmeteo.net/service/informers/css/widget-kit-2.min.css" rel="stylesheet" type="text/css">
-                <a href="https://rusmeteo.net/weather/kirov/" class="rm-kit-informer" id="54bee23efaa01b5ceccf808d870593c7" style="width:280px">Погода в Кирове</a>
-                <script async src="https://rusmeteo.net/api/informerV2/54bee23efaa01b5ceccf808d870593c7/" type="text/javascript"></script>
-                <!-- End Code Weather Forecast rusmeteo.net -->
+         
                 <!--begin::Card widget 20-->
-
+                <div class="card">
+                    <!--begin::Body-->
+                    <div class="card-body p-lg-20">
+                        <!--begin::Section-->
+                        <div class="mb-17">
+                            <!--begin::Title-->
+                            <h3 class="text-gray-900 mb-7">Последние статьи, новости и обновления</h3>
+                            <!--end::Title-->
+                            <!--begin::Separator-->
+                            <div class="separator separator-dashed mb-9"></div>
+                            <!--end::Separator-->
+                            <!--begin::Row-->
+                            <div class="row">
+                                <!--begin::Col-->
+                                <div class="col-md-6">
+                                    <!--begin::Feature post-->
+                                    <div class="h-100 d-flex flex-column justify-content-between pe-lg-6 mb-lg-0 mb-10">
+                                        <!--begin::Video-->
+                                        <div class="mb-3">
+                                            <iframe class="embed-responsive-item card-rounded h-275px w-100" src="https://rutube.ru/play/embed/f9311d000cdc41438d3cb3315adb054b/" allowfullscreen="allowfullscreen"></iframe>
+                                        </div>
+                                        <!--end::Video-->
+                                        <!--begin::Body-->
+                                        <div class="mb-5">
+                                            <!--begin::Title-->
+                                            <a href="#" class="fs-2 text-gray-900 fw-bold text-hover-primary text-gray-900 lh-base">Админ-панель: пошаговое руководство по запуску.
+                                                <br>Создавайте легко настраиваемые приложения</a>
+                                            <!--end::Title-->
+                                            <!--begin::Text-->
+                                            <div class="fw-semibold fs-5 text-gray-600 text-gray-900 mt-4">Мы подробно показываем переход с версии v4 на v5, делимся реальными сценариями и подсказками, чтобы старт прошёл без стресса. Из видео вы узнаете, как адаптировать шаблон под собственные процессы и сформировать понятную дорожную карту запуска.</div>
+                                            <!--end::Text-->
+                                        </div>
+                                        <!--end::Body-->
+                                        <!--begin::Footer-->
+                                        <div class="d-flex flex-stack flex-wrap">
+                                            <!--begin::Item-->
+                                            <div class="d-flex align-items-center pe-2">
+                                                <!--begin::Avatar-->
+                                                <div class="symbol symbol-35px symbol-circle me-3">
+                                                    <img alt="" src="https://wp.segezha-group.com/wp-content/themes/segeja/assets/media/avatars/300-9.jpg">
+                                                </div>
+                                                <!--end::Avatar-->
+                                                <!--begin::Text-->
+                                                <div class="fs-5 fw-bold">
+                                                    <a href="pages/user-profile/overview.html" class="text-gray-700 text-hover-primary">David Morgan</a>
+                                                    <span class="text-muted">27 апреля 2021</span>
+                                                </div>
+                                                <!--end::Text-->
+                                            </div>
+                                            <!--end::Item-->
+                                            <!--begin::Label-->
+                                            <span class="badge badge-light-primary fw-bold my-2">ОБУЧЕНИЕ</span>
+                                            <!--end::Label-->
+                                        </div>
+                                        <!--end::Footer-->
+                                    </div>
+                                    <!--end::Feature post-->
+                                </div>
+                                <!--end::Col-->
+                                <!--begin::Col-->
+                                <div class="col-md-6 justify-content-between d-flex flex-column">
+                                    <!--begin::Post-->
+                                    <div class="ps-lg-6 mb-16 mt-md-0 mt-17">
+                                        <!--begin::Body-->
+                                        <div class="mb-6">
+                                            <!--begin::Title-->
+                                            <a href="#" class="fw-bold text-gray-900 mb-4 fs-2 lh-base text-hover-primary">Bootstrap: тема админ-панели и быстрый старт</a>
+                                            <!--end::Title-->
+                                            <!--begin::Text-->
+                                            <div class="fw-semibold fs-5 mt-4 text-gray-600 text-gray-900">Рассказываем, как развернуть шаблон, адаптировать компоненты под процессы компании и получить аккуратный интерфейс без переписывания кода.</div>
+                                            <!--end::Text-->
+                                        </div>
+                                        <!--end::Body-->
+                                        <!--begin::Footer-->
+                                        <div class="d-flex flex-stack flex-wrap">
+                                            <!--begin::Item-->
+                                            <div class="d-flex align-items-center pe-2">
+                                                <!--begin::Avatar-->
+                                                <div class="symbol symbol-35px symbol-circle me-3">
+                                                    <img src="https://wp.segezha-group.com/wp-content/themes/segeja/assets/media/avatars/300-20.jpg" class="" alt="">
+                                                </div>
+                                                <!--end::Avatar-->
+                                                <!--begin::Text-->
+                                                <div class="fs-5 fw-bold">
+                                                    <a href="pages/user-profile/overview.html" class="text-gray-700 text-hover-primary">Jane Miller</a>
+                                                    <span class="text-muted">27 апреля 2021</span>
+                                                </div>
+                                                <!--end::Text-->
+                                            </div>
+                                            <!--end::Item-->
+                                            <!--begin::Label-->
+                                            <span class="badge badge-light-info fw-bold my-2">БЛОГ</span>
+                                            <!--end::Label-->
+                                        </div>
+                                        <!--end::Footer-->
+                                    </div>
+                                    <!--end::Post-->
+                                    <!--begin::Post-->
+                                    <div class="ps-lg-6 mb-16">
+                                        <!--begin::Body-->
+                                        <div class="mb-6">
+                                            <!--begin::Title-->
+                                            <a href="#" class="fw-bold text-gray-900 mb-4 fs-2 lh-base text-hover-primary">Angular: как адаптировать тему админ-панели</a>
+                                            <!--end::Title-->
+                                            <!--begin::Text-->
+                                            <div class="fw-semibold fs-5 mt-4 text-gray-600 text-gray-900">Подробно объясняем настройку маршрутов, работу с состоянием и подключение готовых модулей, чтобы ускорить разработку дашборда.</div>
+                                            <!--end::Text-->
+                                        </div>
+                                        <!--end::Body-->
+                                        <!--begin::Footer-->
+                                        <div class="d-flex flex-stack flex-wrap">
+                                            <!--begin::Item-->
+                                            <div class="d-flex align-items-center pe-2">
+                                                <!--begin::Avatar-->
+                                                <div class="symbol symbol-35px symbol-circle me-3">
+                                                    <img src="https://wp.segezha-group.com/wp-content/themes/segeja/assets/media/avatars/300-9.jpg" class="" alt="">
+                                                </div>
+                                                <!--end::Avatar-->
+                                                <!--begin::Text-->
+                                                <div class="fs-5 fw-bold">
+                                                    <a href="pages/user-profile/overview.html" class="text-gray-700 text-hover-primary">Cris Morgan</a>
+                                                    <span class="text-muted">14 марта 2021</span>
+                                                </div>
+                                                <!--end::Text-->
+                                            </div>
+                                            <!--end::Item-->
+                                            <!--begin::Label-->
+                                            <span class="badge badge-light-primary fw-bold my-2">ОБУЧЕНИЕ</span>
+                                            <!--end::Label-->
+                                        </div>
+                                        <!--end::Footer-->
+                                    </div>
+                                    <!--end::Post-->
+                                    <!--begin::Post-->
+                                    <div class="ps-lg-6">
+                                        <!--begin::Body-->
+                                        <div class="mb-6">
+                                            <!--begin::Title-->
+                                            <a href="#" class="fw-bold text-gray-900 mb-4 fs-2 lh-base text-hover-primary">React: создаём удобную админ-панель</a>
+                                            <!--end::Title-->
+                                            <!--begin::Text-->
+                                            <div class="fw-semibold fs-5 mt-4 text-gray-600 text-gray-900">Делимся практиками по организации компонентов, подключению API и оптимизации производительности при работе с большими данными.</div>
+                                            <!--end::Text-->
+                                        </div>
+                                        <!--end::Body-->
+                                        <!--begin::Footer-->
+                                        <div class="d-flex flex-stack flex-wrap">
+                                            <!--begin::Item-->
+                                            <div class="d-flex align-items-center pe-2">
+                                                <!--begin::Avatar-->
+                                                <div class="symbol symbol-35px symbol-circle me-3">
+                                                    <img src="https://wp.segezha-group.com/wp-content/themes/segeja/assets/media/avatars/300-19.jpg" class="" alt="">
+                                                </div>
+                                                <!--end::Avatar-->
+                                                <!--begin::Text-->
+                                                <div class="fs-5 fw-bold">
+                                                    <a href="pages/user-profile/overview.html" class="text-gray-700 text-hover-primary">Cris Morgan</a>
+                                                    <span class="text-muted">14 марта 2021</span>
+                                                </div>
+                                                <!--end::Text-->
+                                            </div>
+                                            <!--end::Item-->
+                                            <!--begin::Label-->
+                                            <span class="badge badge-light-warning fw-bold my-2">НОВОСТИ</span>
+                                            <!--end::Label-->
+                                        </div>
+                                        <!--end::Footer-->
+                                    </div>
+                                    <!--end::Post-->
+                                </div>
+                                <!--end::Col-->
+                            </div>
+                            <!--begin::Row-->
+                        </div>
+                        <!--end::Section-->
+                        <!--begin::Section-->
+                        
+                        <!--end::Section-->
+                        <!--begin::Section-->
+                        
+                        <!--end::Section-->
+                        <!--begin::latest instagram-->
+                        
+                        <!--end::latest instagram-->
+                    </div>
+                    <!--end::Body-->
+                </div>
                 <!--end::Card widget 20-->
 
             </div>
             <!--end::Col-->
+           
             <!--begin::Col-->
-            <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-3 mb-md-5 mb-xl-10">
-                <!--begin::Card widget 17-->
-                <!--begin::Card widget 7-->
-                <div class="card card-flush h-md-50 mb-5 mb-xl-10">
+            <div class="col-xxl-3">
+                <!--begin::Engage widget 10-->
+                <div class="card mb-5 mb-xl-8">
+                    <!--begin::Header-->
+                    <div class="card-header border-0 pt-5">
+                        <h3 class="card-title align-items-start flex-column">
+                            <span class="card-label fw-bold text-gray-900">Дни рождения коллег</span>
+                            <span class="text-muted mt-1 fw-semibold fs-7">Поздравляем сотрдников компании с Днем Рождения!</span>
+                        </h3>
+                  
+                    </div>
+                    <!--end::Header-->
+                    <!--begin::Body-->
+                    <div class="card-body pt-5">
+                        <!--begin::Item-->
+                        <div class="d-flex flex-stack">
+                            <!--begin::Symbol-->
+                            <div class="symbol symbol-40px me-5">
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/avatars/300-11.jpg" class="h-50 align-self-center" alt="">
+                            </div>
+                            <!--end::Symbol-->
+                            <!--begin::Section-->
+                            <div class="d-flex align-items-center flex-row-fluid flex-wrap">
+                                <!--begin:Author-->
+                                <div class="flex-grow-1 me-2">
+                                    <a href="pages/user-profile/overview.html" class="text-gray-800 text-hover-primary fs-6 fw-bold">Иванов Иван</a>
+                                    <span class="text-muted fw-semibold d-block fs-7">Отдел поддержки</span>
+                                    <span class="text-gray-800 fw-bold">Среда 03 декабря</span>
+                                </div>
+                                <!--end:Author-->
+                                <!--begin:Action-->
+                                <a href="pages/user-profile/overview.html" class="btn btn-sm btn-light fs-8 fw-bold">Поздравить</a>
+                                <!--end:Action-->
+                            </div>
+                            <!--end::Section-->
+                        </div>
+                        <!--end::Item-->
+                        <!--begin::Separator-->
+                        <div class="separator separator-dashed my-4"></div>
+                        <!--end::Separator-->
+                        <!--begin::Item-->
+                        <div class="d-flex flex-stack">
+                            <!--begin::Symbol-->
+                            <div class="symbol symbol-40px me-5">
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/avatars/300-2.jpg" class="h-50 align-self-center" alt="">
+                            </div>
+                            <!--end::Symbol-->
+                            <!--begin::Section-->
+                            <div class="d-flex align-items-center flex-row-fluid flex-wrap">
+                                <!--begin:Author-->
+                                <div class="flex-grow-1 me-2">
+                                    <a href="pages/user-profile/overview.html" class="text-gray-800 text-hover-primary fs-6 fw-bold">Петрова Анна</a>
+                                    <span class="text-muted fw-semibold d-block fs-7">Подразделение 1С</span>
+                                    <span class="text-gray-800 fw-bold">Среда 03 декабря</span>           
+                                </div>
+                                <!--end:Author-->
+                                <!--begin:Action-->
+                                <a href="pages/user-profile/overview.html" class="btn btn-sm btn-light fs-8 fw-bold">Поздравить</a>
+                                <!--end:Action-->
+                            </div>
+                            <!--end::Section-->
+                        </div>
+                        <!--end::Item-->
+                        <!--begin::Separator-->
+                        <div class="separator separator-dashed my-4"></div>
+                        <!--end::Separator-->
+                        <!--begin::Item-->
+                        <div class="d-flex flex-stack">
+                            <!--begin::Symbol-->
+                            <div class="symbol symbol-40px me-5">
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/avatars/300-7.jpg" class="h-50 align-self-center" alt="">
+                            </div>
+                            <!--end::Symbol-->
+                            <!--begin::Section-->
+                            <div class="d-flex align-items-center flex-row-fluid flex-wrap">
+                                <!--begin:Author-->
+                                <div class="flex-grow-1 me-2">
+                                    <a href="pages/user-profile/overview.html" class="text-gray-800 text-hover-primary fs-6 fw-bold">Попов Гавриил</a>
+                                    <span class="text-muted fw-semibold d-block fs-7">Главное подразделения отдела кадров</span>
+                                </div>
+                                <!--end:Author-->
+                                <!--begin:Action-->
+                                <a href="pages/user-profile/overview.html" class="btn btn-sm btn-light fs-8 fw-bold">Поздравить</a>
+                                <!--end:Action-->
+                            </div>
+                            <!--end::Section-->
+                        </div>
+                        <!--end::Item-->
+                        <!--begin::Separator-->
+                        <div class="separator separator-dashed my-4"></div>
+                        <!--end::Separator-->
+                        <!--begin::Item-->
+                        <div class="d-flex flex-stack">
+                            <!--begin::Symbol-->
+                            <div class="symbol symbol-40px me-5">
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/avatars/300-9.jpg" class="h-50 align-self-center" alt="">
+                            </div>
+                            <!--end::Symbol-->
+                            <!--begin::Section-->
+                            <div class="d-flex align-items-center flex-row-fluid flex-wrap">
+                                <!--begin:Author-->
+                                <div class="flex-grow-1 me-2">
+                                    <a href="pages/user-profile/overview.html" class="text-gray-800 text-hover-primary fs-6 fw-bold">Кукушкина Василиса</a>
+                                    <span class="text-muted fw-semibold d-block fs-7">Бухгалтерия</span>
+                                </div>
+                                <!--end:Author-->
+                                <!--begin:Action-->
+                                <a href="pages/user-profile/overview.html" class="btn btn-sm btn-light fs-8 fw-bold">Поздравить</a>
+                                <!--end:Action-->
+                            </div>
+                            <!--end::Section-->
+                        </div>
+                        <!--end::Item-->
+                        <!--begin::Separator-->
+                        <div class="separator separator-dashed my-4"></div>
+                        <!--end::Separator-->
+                        <!--begin::Item-->
+                        <div class="d-flex flex-stack">
+                            <!--begin::Symbol-->
+                            <div class="symbol symbol-40px me-5">
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/avatars/300-12.jpg" class="h-50 align-self-center" alt="">
+                            </div>
+                            <!--end::Symbol-->
+                            <!--begin::Section-->
+                            <div class="d-flex align-items-center flex-row-fluid flex-wrap">
+                                <!--begin:Author-->
+                                <div class="flex-grow-1 me-2">
+                                    <a href="pages/user-profile/overview.html" class="text-gray-800 text-hover-primary fs-6 fw-bold">Деревянкина Дана</a>
+                                    <span class="text-muted fw-semibold d-block fs-7">Отдел деревообработки</span>
+                                </div>
+                                <!--end:Author-->
+                                <!--begin:Action-->
+                                <a href="pages/user-profile/overview.html" class="btn btn-sm btn-light fs-8 fw-bold">Поздравить</a>
+                                <!--end:Action-->
+                            </div>
+                            <!--end::Section-->
+                        </div>
+                        <!--end::Item-->
+                    </div>
+                    <!--end::Body-->
+                </div>
+                <!--end::Engage widget 10-->
+                <div class="card card-flush mb-5 mb-xl-10">
                     <!--begin::Header-->
                     <div class="card-header pt-5">
                         <!--begin::Title-->
@@ -46,23 +368,23 @@
                         <!--end::Title-->
                         <!--begin::Users group-->
                         <div class="symbol-group symbol-hover flex-nowrap">
-                            <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip" title="Alan Warden">
+                            <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip" data-bs-original-title="Alan Warden" data-kt-initialized="1">
                                 <span class="symbol-label bg-warning text-inverse-warning fw-bold">A</span>
                             </div>
-                            <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip" title="Michael Eberon">
-                                <img alt="Pic" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/avatars/300-11.jpg" />
+                            <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip" aria-label="Michael Eberon" data-bs-original-title="Michael Eberon" data-kt-initialized="1">
+                                <img alt="Pic" src="https://wp.segezha-group.com/wp-content/themes/segeja/assets/media/avatars/300-11.jpg">
                             </div>
-                            <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip" title="Susan Redwood">
+                            <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip" data-bs-original-title="Susan Redwood" data-kt-initialized="1">
                                 <span class="symbol-label bg-primary text-inverse-primary fw-bold">S</span>
                             </div>
-                            <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip" title="Melody Macy">
-                                <img alt="Pic" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/avatars/300-2.jpg" />
+                            <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip" aria-label="Melody Macy" data-bs-original-title="Melody Macy" data-kt-initialized="1">
+                                <img alt="Pic" src="https://wp.segezha-group.com/wp-content/themes/segeja/assets/media/avatars/300-2.jpg">
                             </div>
-                            <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip" title="Perry Matthew">
+                            <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip" data-bs-original-title="Perry Matthew" data-kt-initialized="1">
                                 <span class="symbol-label bg-danger text-inverse-danger fw-bold">P</span>
                             </div>
-                            <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip" title="Barry Walter">
-                                <img alt="Pic" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/avatars/300-12.jpg" />
+                            <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip" aria-label="Barry Walter" data-bs-original-title="Barry Walter" data-kt-initialized="1">
+                                <img alt="Pic" src="https://wp.segezha-group.com/wp-content/themes/segeja/assets/media/avatars/300-12.jpg">
                             </div>
                             <a href="#" class="symbol symbol-35px symbol-circle" data-bs-toggle="modal" data-bs-target="#kt_modal_view_users">
                                 <span class="symbol-label bg-dark text-gray-300 fs-8 fw-bold">+42</span>
@@ -72,342 +394,6 @@
                     </div>
                     <!--end::Card body-->
                 </div>
-                <!--end::Card widget 7-->
-                <!--end::Card widget 17-->
-                <!--begin::List widget 26-->
-                <div class="card card-flush h-lg-50">
-                    <!--begin::Header-->
-                    <div class="card-header pt-5">
-                        <!--begin::Title-->
-                        <h3 class="card-title text-gray-800 fw-bold">Важные ссылки</h3>
-                        <!--end::Title-->
-                        <!--begin::Toolbar-->
-                        <div class="card-toolbar">
-                            <!--begin::Menu-->
-                            <button class="btn btn-icon btn-color-gray-500 btn-active-color-primary justify-content-end" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" data-kt-menu-overflow="true">
-                                <i class="ki-duotone ki-dots-square fs-1 text-gray-500 me-n1">
-                                    <span class="path1"></span>
-                                    <span class="path2"></span>
-                                    <span class="path3"></span>
-                                    <span class="path4"></span>
-                                </i>
-                            </button>
-                            <!--begin::Menu 2-->
-                            <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px" data-kt-menu="true">
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <div class="menu-content fs-6 text-gray-900 fw-bold px-3 py-4">Quick Actions</div>
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu separator-->
-                                <div class="separator mb-3 opacity-75"></div>
-                                <!--end::Menu separator-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <a href="#" class="menu-link px-3">New Ticket</a>
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <a href="#" class="menu-link px-3">New Customer</a>
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3" data-kt-menu-trigger="hover" data-kt-menu-placement="right-start">
-                                    <!--begin::Menu item-->
-                                    <a href="#" class="menu-link px-3">
-                                        <span class="menu-title">New Group</span>
-                                        <span class="menu-arrow"></span>
-                                    </a>
-                                    <!--end::Menu item-->
-                                    <!--begin::Menu sub-->
-                                    <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3">Admin Group</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3">Staff Group</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3">Member Group</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                    </div>
-                                    <!--end::Menu sub-->
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <a href="#" class="menu-link px-3">New Contact</a>
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu separator-->
-                                <div class="separator mt-3 opacity-75"></div>
-                                <!--end::Menu separator-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <div class="menu-content px-3 py-3">
-                                        <a class="btn btn-primary btn-sm px-4" href="#">Generate Reports</a>
-                                    </div>
-                                </div>
-                                <!--end::Menu item-->
-                            </div>
-                            <!--end::Menu 2-->
-                            <!--end::Menu-->
-                        </div>
-                        <!--end::Toolbar-->
-                    </div>
-                    <!--end::Header-->
-                    <!--begin::Body-->
-                    <div class="card-body pt-5">
-                        <!--begin::Item-->
-                        <div class="d-flex flex-stack">
-                            <!--begin::Section-->
-                            <a href="#" class="text-primary fw-semibold fs-6 me-2">Портал поддержки</a>
-                            <!--end::Section-->
-                            <!--begin::Action-->
-                            <button type="button" class="btn btn-icon btn-sm h-auto btn-color-gray-500 btn-active-color-primary justify-content-end">
-                                <i class="ki-duotone ki-exit-right-corner fs-2">
-                                    <span class="path1"></span>
-                                    <span class="path2"></span>
-                                </i>
-                            </button>
-                            <!--end::Action-->
-                        </div>
-                        <!--end::Item-->
-                        <!--begin::Separator-->
-                        <div class="separator separator-dashed my-3"></div>
-                        <!--end::Separator-->
-                        <!--begin::Item-->
-                        <div class="d-flex flex-stack">
-                            <!--begin::Section-->
-                            <a href="#" class="text-primary fw-semibold fs-6 me-2">HRLink</a>
-                            <!--end::Section-->
-                            <!--begin::Action-->
-                            <button type="button" class="btn btn-icon btn-sm h-auto btn-color-gray-500 btn-active-color-primary justify-content-end">
-                                <i class="ki-duotone ki-exit-right-corner fs-2">
-                                    <span class="path1"></span>
-                                    <span class="path2"></span>
-                                </i>
-                            </button>
-                            <!--end::Action-->
-                        </div>
-                        <!--end::Item-->
-                        <!--begin::Separator-->
-                        <div class="separator separator-dashed my-3"></div>
-                        <!--end::Separator-->
-                        <!--begin::Item-->
-                        <div class="d-flex flex-stack">
-                            <!--begin::Section-->
-                            <a href="#" class="text-primary fw-semibold fs-6 me-2">СЭД</a>
-                            <!--end::Section-->
-                            <!--begin::Action-->
-                            <button type="button" class="btn btn-icon btn-sm h-auto btn-color-gray-500 btn-active-color-primary justify-content-end">
-                                <i class="ki-duotone ki-exit-right-corner fs-2">
-                                    <span class="path1"></span>
-                                    <span class="path2"></span>
-                                </i>
-                            </button>
-                            <!--end::Action-->
-                        </div>
-                        <!--end::Item-->
-                    </div>
-                    <!--end::Body-->
-                </div>
-                <!--end::LIst widget 26-->
-            </div>
-            <!--end::Col-->
-            <!--begin::Col-->
-            <div class="col-xxl-6">
-                <!--begin::Engage widget 10-->
-                <div class="card mb-5 mb-xl-8">
-                    <!--begin::Header-->
-                    <div class="card-header border-0 pt-5">
-                        <h3 class="card-title align-items-start flex-column">
-                            <span class="card-label fw-bold text-gray-900">Поздравляем с Днем Рождения!</span>
-                            <span class="text-muted mt-1 fw-semibold fs-7">Наши именниники</span>
-                        </h3>
-                        <!--begin::Toolbar-->
-                        <div class="card-toolbar">
-                            <!--begin::Menu-->
-                            <button class="btn btn-icon btn-color-gray-500 btn-active-color-primary justify-content-end" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" data-kt-menu-overflow="true">
-                                <i class="ki-duotone ki-dots-square fs-1">
-                                    <span class="path1"></span>
-                                    <span class="path2"></span>
-                                    <span class="path3"></span>
-                                    <span class="path4"></span>
-                                </i>
-                            </button>
-                            <!--begin::Menu 2-->
-                            <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px" data-kt-menu="true">
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <div class="menu-content fs-6 text-gray-900 fw-bold px-3 py-4">Quick Actions</div>
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu separator-->
-                                <div class="separator mb-3 opacity-75"></div>
-                                <!--end::Menu separator-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <a href="#" class="menu-link px-3">New Ticket</a>
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <a href="#" class="menu-link px-3">New Customer</a>
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3" data-kt-menu-trigger="hover" data-kt-menu-placement="right-start">
-                                    <!--begin::Menu item-->
-                                    <a href="#" class="menu-link px-3">
-                                        <span class="menu-title">New Group</span>
-                                        <span class="menu-arrow"></span>
-                                    </a>
-                                    <!--end::Menu item-->
-                                    <!--begin::Menu sub-->
-                                    <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3">Admin Group</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3">Staff Group</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3">Member Group</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                    </div>
-                                    <!--end::Menu sub-->
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <a href="#" class="menu-link px-3">New Contact</a>
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu separator-->
-                                <div class="separator mt-3 opacity-75"></div>
-                                <!--end::Menu separator-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <div class="menu-content px-3 py-3">
-                                        <a class="btn btn-primary btn-sm px-4" href="#">Generate Reports</a>
-                                    </div>
-                                </div>
-                                <!--end::Menu item-->
-                            </div>
-                            <!--end::Menu 2-->
-                            <!--end::Menu-->
-                        </div>
-                        <!--end::Toolbar-->
-                    </div>
-                    <!--end::Header-->
-                    <!--begin::Body-->
-                    <div class="card-body pt-5">
-                        <?php
-                        // Получаем дни рождения через плагин
-                        if (class_exists('Segezha_Birthday_Display')) {
-                            $current_user = wp_get_current_user();
-                            if ($current_user->ID) {
-                                // Получаем настройки фильтра пользователя
-                                $filter_settings = class_exists('Segezha_Filter_Settings') ? Segezha_Filter_Settings::get_instance() : null;
-                                $organization_tags = array();
-                                
-                                if ($filter_settings) {
-                                    $user_filters = $filter_settings->get_user_filter_settings($current_user->ID);
-                                    $organization_tags = !empty($user_filters['organizations']) ? $user_filters['organizations'] : array();
-                                }
-                                
-                                // Если фильтр не настроен, используем организации пользователя
-                                if (empty($organization_tags) && class_exists('Segezha_User_Organizations')) {
-                                    $user_orgs = Segezha_User_Organizations::get_instance()->get_user_organizations($current_user->ID);
-                                    $organization_tags = $user_orgs;
-                                }
-                                
-                                $birthday_manager = Segezha_Birthday_Manager::get_instance();
-                                $birthdays = $birthday_manager->get_birthdays_by_organizations($organization_tags, 6);
-                                
-                                if (!empty($birthdays)) {
-                                    $first = true;
-                                    foreach ($birthdays as $birthday) {
-                                        if (!$first) {
-                                            echo '<div class="separator separator-dashed my-4"></div>';
-                                        }
-                                        $first = false;
-                                        ?>
-                                        <!--begin::Item-->
-                                        <div class="d-flex flex-stack">
-                                            <!--begin::Symbol-->
-                                            <div class="symbol symbol-40px me-5">
-                                                <?php if (!empty($birthday['avatar'])) : ?>
-                                                    <img src="<?php echo esc_url($birthday['avatar']); ?>" class="h-50 align-self-center rounded" alt="<?php echo esc_attr($birthday['name']); ?>">
-                                                <?php else : ?>
-                                                    <div class="symbol-label bg-light-primary text-primary fw-bold fs-6">
-                                                        <?php echo esc_html(mb_substr($birthday['name'], 0, 1)); ?>
-                                                    </div>
-                                                <?php endif; ?>
-                                            </div>
-                                            <!--end::Symbol-->
-                                            <!--begin::Section-->
-                                            <div class="d-flex align-items-center flex-row-fluid flex-wrap">
-                                                <!--begin:Author-->
-                                                <div class="flex-grow-1 me-2">
-                                                    <a href="<?php echo esc_url(get_author_posts_url($birthday['user_id'])); ?>" class="text-gray-800 text-hover-primary fs-6 fw-bold">
-                                                        <?php echo esc_html($birthday['name']); ?>
-                                                    </a>
-                                                    <?php if (!empty($birthday['department'])) : ?>
-                                                        <span class="text-muted fw-semibold d-block fs-7"><?php echo esc_html($birthday['department']); ?></span>
-                                                    <?php endif; ?>
-                                                    <span class="text-primary fw-semibold d-block fs-7"><?php echo esc_html($birthday['birthday']); ?></span>
-                                                </div>
-                                                <!--end:Author-->
-                                                <!--begin:Action-->
-                                                <a href="#" class="btn btn-sm btn-light fs-8 fw-bold">Поздравить</a>
-                                                <!--end:Action-->
-                                            </div>
-                                            <!--end::Section-->
-                                        </div>
-                                        <!--end::Item-->
-                                        <?php
-                                    }
-                                } else {
-                                    ?>
-                                    <div class="text-center py-5">
-                                        <p class="text-muted">Нет предстоящих дней рождений</p>
-                                    </div>
-                                    <?php
-                                }
-                            } else {
-                                ?>
-                                <div class="text-center py-5">
-                                    <p class="text-muted">Войдите, чтобы видеть дни рождения коллег</p>
-                                </div>
-                                <?php
-                            }
-                        } else {
-                            ?>
-                            <div class="text-center py-5">
-                                <p class="text-muted">Плагин дней рождений не активирован</p>
-                            </div>
-                            <?php
-                        }
-                        ?>
-                    </div>
-                    <!--end::Body-->
-                </div>
-                <!--end::Engage widget 10-->
             </div>
             <!--end::Col-->
         </div>
@@ -593,24 +579,235 @@
                             <span class="text-muted mt-1 fw-semibold fs-7">ООО Сегежа Цифровые Решения</span>
                         </h3>
                         <div class="card-toolbar">
-                            <!--begin::Filter button-->
-                            <a href="#" class="btn btn-sm btn-flex btn-secondary fw-bold" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" id="news-filter-trigger">
-                                <i class="ki-duotone ki-filter fs-6 text-muted me-1">
+                            <!--begin::Menu-->
+                            <button type="button" class="btn btn-sm btn-icon btn-color-primary btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                                <i class="ki-duotone ki-category fs-6">
                                     <span class="path1"></span>
                                     <span class="path2"></span>
-                                </i>Фильтр</a>
-                            <?php segeja_render_news_filter('news-filter-menu-org'); ?>
-                            <!--end::Filter button-->
+                                    <span class="path3"></span>
+                                    <span class="path4"></span>
+                                </i>
+                            </button>
+                            <!--begin::Menu 3-->
+                            <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px py-3" data-kt-menu="true">
+                                <!--begin::Heading-->
+                                <div class="menu-item px-3">
+                                    <div class="menu-content text-muted pb-2 px-3 fs-7 text-uppercase">Payments</div>
+                                </div>
+                                <!--end::Heading-->
+                                <!--begin::Menu item-->
+                                <div class="menu-item px-3">
+                                    <a href="#" class="menu-link px-3">Create Invoice</a>
+                                </div>
+                                <!--end::Menu item-->
+                                <!--begin::Menu item-->
+                                <div class="menu-item px-3">
+                                    <a href="#" class="menu-link flex-stack px-3">Create Payment
+                                        <span class="ms-2" data-bs-toggle="tooltip" aria-label="Specify a target name for future usage and reference" data-bs-original-title="Specify a target name for future usage and reference" data-kt-initialized="1">
+																	<i class="ki-duotone ki-information fs-6">
+																		<span class="path1"></span>
+																		<span class="path2"></span>
+																		<span class="path3"></span>
+																	</i>
+																</span></a>
+                                </div>
+                                <!--end::Menu item-->
+                                <!--begin::Menu item-->
+                                <div class="menu-item px-3">
+                                    <a href="#" class="menu-link px-3">Generate Bill</a>
+                                </div>
+                                <!--end::Menu item-->
+                                <!--begin::Menu item-->
+                                <div class="menu-item px-3" data-kt-menu-trigger="hover" data-kt-menu-placement="right-end">
+                                    <a href="#" class="menu-link px-3">
+                                        <span class="menu-title">Subscription</span>
+                                        <span class="menu-arrow"></span>
+                                    </a>
+                                    <!--begin::Menu sub-->
+                                    <div class="menu-sub menu-sub-dropdown w-175px py-4">
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                            <a href="#" class="menu-link px-3">Plans</a>
+                                        </div>
+                                        <!--end::Menu item-->
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                            <a href="#" class="menu-link px-3">Billing</a>
+                                        </div>
+                                        <!--end::Menu item-->
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                            <a href="#" class="menu-link px-3">Statements</a>
+                                        </div>
+                                        <!--end::Menu item-->
+                                        <!--begin::Menu separator-->
+                                        <div class="separator my-2"></div>
+                                        <!--end::Menu separator-->
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                            <div class="menu-content px-3">
+                                                <!--begin::Switch-->
+                                                <label class="form-check form-switch form-check-custom form-check-solid">
+                                                    <!--begin::Input-->
+                                                    <input class="form-check-input w-30px h-20px" type="checkbox" value="1" checked="checked" name="notifications">
+                                                    <!--end::Input-->
+                                                    <!--end::Label-->
+                                                    <span class="form-check-label text-muted fs-6">Recuring</span>
+                                                    <!--end::Label-->
+                                                </label>
+                                                <!--end::Switch-->
+                                            </div>
+                                        </div>
+                                        <!--end::Menu item-->
+                                    </div>
+                                    <!--end::Menu sub-->
+                                </div>
+                                <!--end::Menu item-->
+                                <!--begin::Menu item-->
+                                <div class="menu-item px-3 my-1">
+                                    <a href="#" class="menu-link px-3">Settings</a>
+                                </div>
+                                <!--end::Menu item-->
+                            </div>
+                            <!--end::Menu 3-->
+                            <!--end::Menu-->
                         </div>
                     </div>
                     <!--end::Header-->
                     <!--begin::Body-->
-                    <div class="card-body pt-3" id="news-container-org">
-                        <?php 
-                        // Получаем выбранные теги из URL параметра или сессии
-                        $selected_tags = isset($_GET['news_tags']) ? explode(',', sanitize_text_field($_GET['news_tags'])) : array();
-                        segeja_render_news_list($selected_tags, 4); 
-                        ?>
+                    <div class="card-body pt-3">
+                        <!--begin::Item-->
+                        <div class="d-flex align-items-sm-center mb-7">
+                            <!--begin::Symbol-->
+                            <div class="symbol symbol-60px symbol-2by3 me-4">
+                                <div class="symbol-label" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/media/stock/600x400/img-17.jpg')"></div>
+                            </div>
+                            <!--end::Symbol-->
+                            <!--begin::Content-->
+                            <div class="d-flex flex-row-fluid align-items-center flex-wrap my-lg-0 me-2">
+                                <!--begin::Title-->
+                                <div class="flex-grow-1 my-lg-0 my-2 me-2">
+                                    <a href="#" class="text-gray-800 fw-bold text-hover-primary fs-6">Благотворительный сбор средств</a>
+                                    <span class="text-muted fw-semibold d-block pt-1">Волонтерское движение СЦР и ОЦО объявило благотвори...</span>
+                                </div>
+                                <!--end::Title-->
+                                <!--begin::Section-->
+                                <div class="d-flex align-items-center">
+                                    <div class="me-6">
+                                        <i class="fa fa-star-half-alt me-1 text-warning fs-5"></i>
+                                        <span class="text-gray-800 fw-bold">4.2</span>
+                                    </div>
+                                    <a href="#" class="btn btn-icon btn-light btn-sm border-0">
+                                        <i class="ki-duotone ki-arrow-right fs-2 text-primary">
+                                            <span class="path1"></span>
+                                            <span class="path2"></span>
+                                        </i>
+                                    </a>
+                                </div>
+                                <!--end::Section-->
+                            </div>
+                            <!--end::Content-->
+                        </div>
+                        <!--end::Item-->
+                        <!--begin::Item-->
+                        <div class="d-flex align-items-sm-center mb-7">
+                            <!--begin::Symbol-->
+                            <div class="symbol symbol-60px symbol-2by3 me-4">
+                                <div class="symbol-label" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/media/stock/600x400/img-10.jpg')"></div>
+                            </div>
+                            <!--end::Symbol-->
+                            <!--begin::Content-->
+                            <div class="d-flex flex-row-fluid align-items-center flex-wrap my-lg-0 me-2">
+                                <!--begin::Title-->
+                                <div class="flex-grow-1 my-lg-0 my-2 me-2">
+                                    <a href="#" class="text-gray-800 fw-bold text-hover-primary fs-6">Segezha Group вошла в группу «Золото»</a>
+                                    <span class="text-muted fw-semibold d-block pt-1">Segezha Group вошла в группу «Золото» рейтинга лучших ...</span>
+                                </div>
+                                <!--end::Title-->
+                                <!--begin::Section-->
+                                <div class="d-flex align-items-center">
+                                    <div class="me-6">
+                                        <i class="fa fa-star-half-alt me-1 text-warning fs-5"></i>
+                                        <span class="text-gray-800 fw-bold">5.0</span>
+                                    </div>
+                                    <a href="#" class="btn btn-icon btn-light btn-sm border-0">
+                                        <i class="ki-duotone ki-arrow-right fs-2 text-primary">
+                                            <span class="path1"></span>
+                                            <span class="path2"></span>
+                                        </i>
+                                    </a>
+                                </div>
+                                <!--end::Section-->
+                            </div>
+                            <!--end::Content-->
+                        </div>
+                        <!--end::Item-->
+                        <!--begin::Item-->
+                        <div class="d-flex align-items-sm-center mb-7">
+                            <!--begin::Symbol-->
+                            <div class="symbol symbol-60px symbol-2by3 me-4">
+                                <div class="symbol-label" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/media/stock/600x400/img-1.jpg')"></div>
+                            </div>
+                            <!--end::Symbol-->
+                            <!--begin::Content-->
+                            <div class="d-flex flex-row-fluid align-items-center flex-wrap my-lg-0 me-2">
+                                <!--begin::Title-->
+                                <div class="flex-grow-1 my-lg-0 my-2 me-2">
+                                    <a href="#" class="text-gray-800 fw-bold text-hover-primary fs-6">Благотворительный сбор средств</a>
+                                    <span class="text-muted fw-semibold d-block pt-1">Волонтерское движение СЦР и ОЦО объявило благотвори...</span>
+                                </div>
+                                <!--end::Title-->
+                                <!--begin::Section-->
+                                <div class="d-flex align-items-center">
+                                    <div class="me-6">
+                                        <i class="fa fa-star-half-alt me-1 text-warning fs-5"></i>
+                                        <span class="text-gray-800 fw-bold">5.7</span>
+                                    </div>
+                                    <a href="#" class="btn btn-icon btn-light btn-sm border-0">
+                                        <i class="ki-duotone ki-arrow-right fs-2 text-primary">
+                                            <span class="path1"></span>
+                                            <span class="path2"></span>
+                                        </i>
+                                    </a>
+                                </div>
+                                <!--end::Section-->
+                            </div>
+                            <!--end::Content-->
+                        </div>
+                        <!--end::Item-->
+                        <!--begin::Item-->
+                        <div class="d-flex align-items-sm-center">
+                            <!--begin::Symbol-->
+                            <div class="symbol symbol-60px symbol-2by3 me-4">
+                                <div class="symbol-label" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/media/stock/600x400/img-9.jpg')"></div>
+                            </div>
+                            <!--end::Symbol-->
+                            <!--begin::Content-->
+                            <div class="d-flex flex-row-fluid align-items-center flex-wrap my-lg-0 me-2">
+                                <!--begin::Title-->
+                                <div class="flex-grow-1 my-lg-0 my-2 me-2">
+                                    <a href="#" class="text-gray-800 fw-bold text-hover-primary fs-6">Segezha Group вошла в группу «Золото»</a>
+                                    <span class="text-muted fw-semibold d-block pt-1">Segezha Group вошла в группу «Золото» рейтинга лучших ...</span>
+                                </div>
+                                <!--end::Title-->
+                                <!--begin::Section-->
+                                <div class="d-flex align-items-center">
+                                    <div class="me-6">
+                                        <i class="fa fa-star-half-alt me-1 text-warning fs-5"></i>
+                                        <span class="text-gray-800 fw-bold">3.7</span>
+                                    </div>
+                                    <a href="#" class="btn btn-icon btn-light btn-sm border-0">
+                                        <i class="ki-duotone ki-arrow-right fs-2 text-primary">
+                                            <span class="path1"></span>
+                                            <span class="path2"></span>
+                                        </i>
+                                    </a>
+                                </div>
+                                <!--end::Section-->
+                            </div>
+                            <!--end::Content-->
+                        </div>
+                        <!--end::Item-->
                     </div>
                     <!--end::Body-->
                 </div>
@@ -632,24 +829,235 @@
                             <span class="text-muted mt-1 fw-semibold fs-7">ООО Сегежа Групп</span>
                         </h3>
                         <div class="card-toolbar">
-                            <!--begin::Filter button-->
-                            <a href="#" class="btn btn-sm btn-flex btn-secondary fw-bold" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" id="news-filter-trigger-company">
-                                <i class="ki-duotone ki-filter fs-6 text-muted me-1">
+                            <!--begin::Menu-->
+                            <button type="button" class="btn btn-sm btn-icon btn-color-primary btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                                <i class="ki-duotone ki-category fs-6">
                                     <span class="path1"></span>
                                     <span class="path2"></span>
-                                </i>Фильтр</a>
-                            <?php segeja_render_news_filter('news-filter-menu-company'); ?>
-                            <!--end::Filter button-->
+                                    <span class="path3"></span>
+                                    <span class="path4"></span>
+                                </i>
+                            </button>
+                            <!--begin::Menu 3-->
+                            <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px py-3" data-kt-menu="true">
+                                <!--begin::Heading-->
+                                <div class="menu-item px-3">
+                                    <div class="menu-content text-muted pb-2 px-3 fs-7 text-uppercase">Payments</div>
+                                </div>
+                                <!--end::Heading-->
+                                <!--begin::Menu item-->
+                                <div class="menu-item px-3">
+                                    <a href="#" class="menu-link px-3">Create Invoice</a>
+                                </div>
+                                <!--end::Menu item-->
+                                <!--begin::Menu item-->
+                                <div class="menu-item px-3">
+                                    <a href="#" class="menu-link flex-stack px-3">Create Payment
+                                        <span class="ms-2" data-bs-toggle="tooltip" aria-label="Specify a target name for future usage and reference" data-bs-original-title="Specify a target name for future usage and reference" data-kt-initialized="1">
+																	<i class="ki-duotone ki-information fs-6">
+																		<span class="path1"></span>
+																		<span class="path2"></span>
+																		<span class="path3"></span>
+																	</i>
+																</span></a>
+                                </div>
+                                <!--end::Menu item-->
+                                <!--begin::Menu item-->
+                                <div class="menu-item px-3">
+                                    <a href="#" class="menu-link px-3">Generate Bill</a>
+                                </div>
+                                <!--end::Menu item-->
+                                <!--begin::Menu item-->
+                                <div class="menu-item px-3" data-kt-menu-trigger="hover" data-kt-menu-placement="right-end">
+                                    <a href="#" class="menu-link px-3">
+                                        <span class="menu-title">Subscription</span>
+                                        <span class="menu-arrow"></span>
+                                    </a>
+                                    <!--begin::Menu sub-->
+                                    <div class="menu-sub menu-sub-dropdown w-175px py-4">
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                            <a href="#" class="menu-link px-3">Plans</a>
+                                        </div>
+                                        <!--end::Menu item-->
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                            <a href="#" class="menu-link px-3">Billing</a>
+                                        </div>
+                                        <!--end::Menu item-->
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                            <a href="#" class="menu-link px-3">Statements</a>
+                                        </div>
+                                        <!--end::Menu item-->
+                                        <!--begin::Menu separator-->
+                                        <div class="separator my-2"></div>
+                                        <!--end::Menu separator-->
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                            <div class="menu-content px-3">
+                                                <!--begin::Switch-->
+                                                <label class="form-check form-switch form-check-custom form-check-solid">
+                                                    <!--begin::Input-->
+                                                    <input class="form-check-input w-30px h-20px" type="checkbox" value="1" checked="checked" name="notifications">
+                                                    <!--end::Input-->
+                                                    <!--end::Label-->
+                                                    <span class="form-check-label text-muted fs-6">Recuring</span>
+                                                    <!--end::Label-->
+                                                </label>
+                                                <!--end::Switch-->
+                                            </div>
+                                        </div>
+                                        <!--end::Menu item-->
+                                    </div>
+                                    <!--end::Menu sub-->
+                                </div>
+                                <!--end::Menu item-->
+                                <!--begin::Menu item-->
+                                <div class="menu-item px-3 my-1">
+                                    <a href="#" class="menu-link px-3">Settings</a>
+                                </div>
+                                <!--end::Menu item-->
+                            </div>
+                            <!--end::Menu 3-->
+                            <!--end::Menu-->
                         </div>
                     </div>
                     <!--end::Header-->
                     <!--begin::Body-->
-                    <div class="card-body pt-3" id="news-container-company">
-                        <?php 
-                        // Получаем выбранные теги из URL параметра или сессии
-                        $selected_tags = isset($_GET['news_tags_company']) ? explode(',', sanitize_text_field($_GET['news_tags_company'])) : array();
-                        segeja_render_news_list($selected_tags, 4); 
-                        ?>
+                    <div class="card-body pt-3">
+                        <!--begin::Item-->
+                        <div class="d-flex align-items-sm-center mb-7">
+                            <!--begin::Symbol-->
+                            <div class="symbol symbol-60px symbol-2by3 me-4">
+                                <div class="symbol-label" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/media/stock/600x400/img-17.jpg')"></div>
+                            </div>
+                            <!--end::Symbol-->
+                            <!--begin::Content-->
+                            <div class="d-flex flex-row-fluid align-items-center flex-wrap my-lg-0 me-2">
+                                <!--begin::Title-->
+                                <div class="flex-grow-1 my-lg-0 my-2 me-2">
+                                    <a href="#" class="text-gray-800 fw-bold text-hover-primary fs-6">Благотворительный сбор средств</a>
+                                    <span class="text-muted fw-semibold d-block pt-1">Волонтерское движение СЦР и ОЦО объявило благотвори...</span>
+                                </div>
+                                <!--end::Title-->
+                                <!--begin::Section-->
+                                <div class="d-flex align-items-center">
+                                    <div class="me-6">
+                                        <i class="fa fa-star-half-alt me-1 text-warning fs-5"></i>
+                                        <span class="text-gray-800 fw-bold">4.2</span>
+                                    </div>
+                                    <a href="#" class="btn btn-icon btn-light btn-sm border-0">
+                                        <i class="ki-duotone ki-arrow-right fs-2 text-primary">
+                                            <span class="path1"></span>
+                                            <span class="path2"></span>
+                                        </i>
+                                    </a>
+                                </div>
+                                <!--end::Section-->
+                            </div>
+                            <!--end::Content-->
+                        </div>
+                        <!--end::Item-->
+                        <!--begin::Item-->
+                        <div class="d-flex align-items-sm-center mb-7">
+                            <!--begin::Symbol-->
+                            <div class="symbol symbol-60px symbol-2by3 me-4">
+                                <div class="symbol-label" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/media/stock/600x400/img-10.jpg')"></div>
+                            </div>
+                            <!--end::Symbol-->
+                            <!--begin::Content-->
+                            <div class="d-flex flex-row-fluid align-items-center flex-wrap my-lg-0 me-2">
+                                <!--begin::Title-->
+                                <div class="flex-grow-1 my-lg-0 my-2 me-2">
+                                    <a href="#" class="text-gray-800 fw-bold text-hover-primary fs-6">Segezha Group вошла в группу «Золото»</a>
+                                    <span class="text-muted fw-semibold d-block pt-1">Segezha Group вошла в группу «Золото» рейтинга лучших ...</span>
+                                </div>
+                                <!--end::Title-->
+                                <!--begin::Section-->
+                                <div class="d-flex align-items-center">
+                                    <div class="me-6">
+                                        <i class="fa fa-star-half-alt me-1 text-warning fs-5"></i>
+                                        <span class="text-gray-800 fw-bold">5.0</span>
+                                    </div>
+                                    <a href="#" class="btn btn-icon btn-light btn-sm border-0">
+                                        <i class="ki-duotone ki-arrow-right fs-2 text-primary">
+                                            <span class="path1"></span>
+                                            <span class="path2"></span>
+                                        </i>
+                                    </a>
+                                </div>
+                                <!--end::Section-->
+                            </div>
+                            <!--end::Content-->
+                        </div>
+                        <!--end::Item-->
+                        <!--begin::Item-->
+                        <div class="d-flex align-items-sm-center mb-7">
+                            <!--begin::Symbol-->
+                            <div class="symbol symbol-60px symbol-2by3 me-4">
+                                <div class="symbol-label" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/media/stock/600x400/img-1.jpg')"></div>
+                            </div>
+                            <!--end::Symbol-->
+                            <!--begin::Content-->
+                            <div class="d-flex flex-row-fluid align-items-center flex-wrap my-lg-0 me-2">
+                                <!--begin::Title-->
+                                <div class="flex-grow-1 my-lg-0 my-2 me-2">
+                                    <a href="#" class="text-gray-800 fw-bold text-hover-primary fs-6">Благотворительный сбор средств</a>
+                                    <span class="text-muted fw-semibold d-block pt-1">Волонтерское движение СЦР и ОЦО объявило благотвори...</span>
+                                </div>
+                                <!--end::Title-->
+                                <!--begin::Section-->
+                                <div class="d-flex align-items-center">
+                                    <div class="me-6">
+                                        <i class="fa fa-star-half-alt me-1 text-warning fs-5"></i>
+                                        <span class="text-gray-800 fw-bold">5.7</span>
+                                    </div>
+                                    <a href="#" class="btn btn-icon btn-light btn-sm border-0">
+                                        <i class="ki-duotone ki-arrow-right fs-2 text-primary">
+                                            <span class="path1"></span>
+                                            <span class="path2"></span>
+                                        </i>
+                                    </a>
+                                </div>
+                                <!--end::Section-->
+                            </div>
+                            <!--end::Content-->
+                        </div>
+                        <!--end::Item-->
+                        <!--begin::Item-->
+                        <div class="d-flex align-items-sm-center">
+                            <!--begin::Symbol-->
+                            <div class="symbol symbol-60px symbol-2by3 me-4">
+                                <div class="symbol-label" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/media/stock/600x400/img-9.jpg')"></div>
+                            </div>
+                            <!--end::Symbol-->
+                            <!--begin::Content-->
+                            <div class="d-flex flex-row-fluid align-items-center flex-wrap my-lg-0 me-2">
+                                <!--begin::Title-->
+                                <div class="flex-grow-1 my-lg-0 my-2 me-2">
+                                    <a href="#" class="text-gray-800 fw-bold text-hover-primary fs-6">Segezha Group вошла в группу «Золото»</a>
+                                    <span class="text-muted fw-semibold d-block pt-1">Segezha Group вошла в группу «Золото» рейтинга лучших ...</span>
+                                </div>
+                                <!--end::Title-->
+                                <!--begin::Section-->
+                                <div class="d-flex align-items-center">
+                                    <div class="me-6">
+                                        <i class="fa fa-star-half-alt me-1 text-warning fs-5"></i>
+                                        <span class="text-gray-800 fw-bold">3.7</span>
+                                    </div>
+                                    <a href="#" class="btn btn-icon btn-light btn-sm border-0">
+                                        <i class="ki-duotone ki-arrow-right fs-2 text-primary">
+                                            <span class="path1"></span>
+                                            <span class="path2"></span>
+                                        </i>
+                                    </a>
+                                </div>
+                                <!--end::Section-->
+                            </div>
+                            <!--end::Content-->
+                        </div>
+                        <!--end::Item-->
                     </div>
                     <!--end::Body-->
                 </div>
@@ -1549,59 +1957,3 @@
     </div>
     <!--end::Content container-->
 </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Обработчик для фильтра новостей организации
-    const filterTriggerOrg = document.getElementById('news-filter-trigger');
-    const filterMenuOrg = document.getElementById('news-filter-menu-org');
-    const newsContainerOrg = document.getElementById('news-container-org');
-    
-    if (filterTriggerOrg && filterMenuOrg) {
-        const applyButtonOrg = filterMenuOrg.querySelector('#apply-news-filter');
-        
-        if (applyButtonOrg) {
-            applyButtonOrg.addEventListener('click', function(e) {
-                e.preventDefault();
-                const selectedTags = Array.from(filterMenuOrg.querySelectorAll('.news-filter-checkbox:checked'))
-                    .map(checkbox => checkbox.value);
-                
-                // Обновляем URL с параметрами фильтра
-                const url = new URL(window.location.href);
-                if (selectedTags.length > 0) {
-                    url.searchParams.set('news_tags', selectedTags.join(','));
-                } else {
-                    url.searchParams.delete('news_tags');
-                }
-                window.location.href = url.toString();
-            });
-        }
-    }
-    
-    // Обработчик для фильтра новостей компании
-    const filterTriggerCompany = document.getElementById('news-filter-trigger-company');
-    const filterMenuCompany = document.getElementById('news-filter-menu-company');
-    const newsContainerCompany = document.getElementById('news-container-company');
-    
-    if (filterTriggerCompany && filterMenuCompany) {
-        const applyButtonCompany = filterMenuCompany.querySelector('#apply-news-filter');
-        
-        if (applyButtonCompany) {
-            applyButtonCompany.addEventListener('click', function(e) {
-                e.preventDefault();
-                const selectedTags = Array.from(filterMenuCompany.querySelectorAll('.news-filter-checkbox:checked'))
-                    .map(checkbox => checkbox.value);
-                
-                // Обновляем URL с параметрами фильтра
-                const url = new URL(window.location.href);
-                if (selectedTags.length > 0) {
-                    url.searchParams.set('news_tags_company', selectedTags.join(','));
-                } else {
-                    url.searchParams.delete('news_tags_company');
-                }
-                window.location.href = url.toString();
-            });
-        }
-    }
-});
-</script>

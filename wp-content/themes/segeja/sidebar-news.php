@@ -184,87 +184,13 @@
                         <!--begin::Filter menu-->
                         <div class="m-0">
                             <!--begin::Menu toggle-->
-                            <a href="#" class="btn btn-sm btn-flex btn-secondary fw-bold" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                            <a href="#" class="btn btn-sm btn-flex btn-secondary fw-bold" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" id="kt_news_filter_toggle">
                                 <i class="ki-duotone ki-filter fs-6 text-muted me-1">
                                     <span class="path1"></span>
                                     <span class="path2"></span>
                                 </i>Фильтр</a>
                             <!--end::Menu toggle-->
-                            <!--begin::Menu 1-->
-                            <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_65a121509dab7">
-                                <!--begin::Header-->
-                                <div class="px-7 py-5">
-                                    <div class="fs-5 text-gray-900 fw-bold">Опции фильтра</div>
-                                </div>
-                                <!--end::Header-->
-                                <!--begin::Menu separator-->
-                                <div class="separator border-gray-200"></div>
-                                <!--end::Menu separator-->
-                                <!--begin::Form-->
-                                <div class="px-7 py-5">
-                                    <!--begin::Input group-->
-                                    <div class="mb-10">
-                                        <!--begin::Label-->
-                                        <label class="form-label fw-semibold">Тип новостей:</label>
-                                        <!--end::Label-->
-                                        <!--begin::Input-->
-                                        <div>
-                                            <select class="form-select form-select-solid select2-hidden-accessible" multiple="" data-kt-select2="true" data-close-on-select="false" data-placeholder="Выберите опцию" data-dropdown-parent="#kt_menu_65a121509dab7" data-allow-clear="true" data-select2-id="select2-data-7-tn3q" tabindex="-1" aria-hidden="true" data-kt-initialized="1">
-                                                <option></option>
-                                                <option value="1">Новости компании</option>
-                                                <option value="2">Новости организации</option>
-
-                                            </select><span class="select2 select2-container select2-container--bootstrap5" dir="ltr" data-select2-id="select2-data-8-nrqm" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--multiple form-select form-select-solid" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="false"><ul class="select2-selection__rendered" id="select2-8lxv-container"></ul><span class="select2-search select2-search--inline"><textarea class="select2-search__field" type="search" tabindex="0" autocorrect="off" autocapitalize="none" spellcheck="false" role="searchbox" aria-autocomplete="list" autocomplete="off" aria-label="Search" aria-describedby="select2-8lxv-container" placeholder="Выберите опцию" style="width: 100%;"></textarea></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-                                        </div>
-                                        <!--end::Input-->
-                                    </div>
-                                    <!--end::Input group-->
-                                    <!--begin::Input group-->
-                                    <div class="mb-10">
-                                        <!--begin::Label-->
-                                        <label class="form-label fw-semibold">Автор:</label>
-                                        <!--end::Label-->
-                                        <!--begin::Options-->
-                                        <div class="d-flex">
-                                            <!--begin::Options-->
-                                            <label class="form-check form-check-sm form-check-custom form-check-solid me-5">
-                                                <input class="form-check-input" type="checkbox" value="1">
-                                                <span class="form-check-label">Мои новости</span>
-                                            </label>
-                                            <!--end::Options-->
-                                            <!--begin::Options-->
-                                            <label class="form-check form-check-sm form-check-custom form-check-solid">
-                                                <input class="form-check-input" type="checkbox" value="2" checked="checked">
-                                                <span class="form-check-label">Другие авторы</span>
-                                            </label>
-                                            <!--end::Options-->
-                                        </div>
-                                        <!--end::Options-->
-                                    </div>
-                                    <!--end::Input group-->
-                                    <!--begin::Input group-->
-                                    <div class="mb-10">
-                                        <!--begin::Label-->
-                                        <label class="form-label fw-semibold">Только по организации:</label>
-                                        <!--end::Label-->
-                                        <!--begin::Switch-->
-                                        <div class="form-check form-switch form-switch-sm form-check-custom form-check-solid">
-                                            <input class="form-check-input" type="checkbox" value="" name="notifications" checked="checked">
-                                            <label class="form-check-label">Включить</label>
-                                        </div>
-                                        <!--end::Switch-->
-                                    </div>
-                                    <!--end::Input group-->
-                                    <!--begin::Actions-->
-                                    <div class="d-flex justify-content-end">
-                                        <button type="reset" class="btn btn-sm btn-light btn-active-light-primary me-2" data-kt-menu-dismiss="true">Очистить</button>
-                                        <button type="submit" class="btn btn-sm btn-primary" data-kt-menu-dismiss="true">Применить</button>
-                                    </div>
-                                    <!--end::Actions-->
-                                </div>
-                                <!--end::Form-->
-                            </div>
-                            <!--end::Menu 1-->
+                            <?php segeja_render_news_filter('kt_news_filter_menu'); ?>
                         </div>
                         <!--end::Filter menu-->
                         <!--begin::Secondary button-->
@@ -285,26 +211,57 @@
         <?php
         // Получаем настройки фильтрации текущего пользователя
         $current_user = wp_get_current_user();
-        $selected_tags = array();
+        $selected_tag_slugs = array();
         
-        if ($current_user->ID) {
+        // Если есть параметры в URL, используем их (приоритет)
+        if (isset($_GET['news_tags']) && !empty($_GET['news_tags'])) {
+            $selected_tag_slugs = array_map('trim', explode(',', sanitize_text_field($_GET['news_tags'])));
+        } elseif ($current_user->ID) {
+            // Получаем организации из настроек фильтра пользователя
             $filter_settings = class_exists('Segezha_Filter_Settings') ? Segezha_Filter_Settings::get_instance() : null;
             if ($filter_settings) {
                 $user_filters = $filter_settings->get_user_filter_settings($current_user->ID);
-                $selected_tags = !empty($user_filters['organizations']) ? $user_filters['organizations'] : array();
+                $user_orgs = !empty($user_filters['organizations']) ? $user_filters['organizations'] : array();
+                
+                // Преобразуем названия организаций в слаги тегов
+                if (!empty($user_orgs)) {
+                    $all_tags = segeja_get_organization_tags();
+                    foreach ($all_tags as $tag) {
+                        if (in_array($tag->name, $user_orgs)) {
+                            $selected_tag_slugs[] = $tag->slug;
+                        }
+                    }
+                }
             }
-        }
-        
-        // Если есть параметры в URL, используем их
-        if (isset($_GET['news_tags']) && !empty($_GET['news_tags'])) {
-            $selected_tags = explode(',', sanitize_text_field($_GET['news_tags']));
         }
         
         // Получаем новости
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-        $news_query = segeja_get_news_by_tags($selected_tags, get_option('posts_per_page', 10));
-        $news_query->set('paged', $paged);
-        $news_query->query($news_query->query_vars);
+        $posts_per_page = get_option('posts_per_page', 10);
+        
+        // Создаем запрос с пагинацией
+        $args = array(
+            'post_type'      => 'news',
+            'posts_per_page' => $posts_per_page,
+            'post_status'    => 'publish',
+            'orderby'        => 'date',
+            'order'          => 'DESC',
+            'paged'          => $paged,
+        );
+        
+        // Если указаны теги, добавляем таксономию
+        if (!empty($selected_tag_slugs) && is_array($selected_tag_slugs)) {
+            $args['tax_query'] = array(
+                array(
+                    'taxonomy' => 'post_tag',
+                    'field'    => 'slug',
+                    'terms'    => $selected_tag_slugs,
+                    'operator' => 'IN',
+                ),
+            );
+        }
+        
+        $news_query = new WP_Query($args);
         ?>
         
         <!--begin::Row-->
@@ -447,3 +404,58 @@
     <!--end:::Main-->
 </div>
 <!--end::Wrapper-->
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Обработчик для фильтра новостей
+    const filterToggle = document.getElementById('kt_news_filter_toggle');
+    const filterMenu = document.getElementById('kt_news_filter_menu');
+    
+    if (filterToggle && filterMenu) {
+        const applyButton = filterMenu.querySelector('#apply-news-filter');
+        const clearButton = filterMenu.querySelector('#clear-news-filter');
+        
+        if (applyButton) {
+            applyButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                const selectedTags = Array.from(filterMenu.querySelectorAll('.news-filter-checkbox:checked'))
+                    .map(checkbox => checkbox.value);
+                
+                // Обновляем URL с параметрами фильтра
+                const url = new URL(window.location.href);
+                if (selectedTags.length > 0) {
+                    url.searchParams.set('news_tags', selectedTags.join(','));
+                } else {
+                    url.searchParams.delete('news_tags');
+                }
+                window.location.href = url.toString();
+            });
+        }
+        
+        if (clearButton) {
+            clearButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                const checkboxes = filterMenu.querySelectorAll('.news-filter-checkbox');
+                checkboxes.forEach(cb => cb.checked = false);
+                
+                const url = new URL(window.location.href);
+                url.searchParams.delete('news_tags');
+                window.location.href = url.toString();
+            });
+        }
+    }
+    
+    // Восстанавливаем выбранные теги из URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const newsTags = urlParams.get('news_tags');
+    if (newsTags && filterMenu) {
+        const tags = newsTags.split(',');
+        tags.forEach(function(tag) {
+            const checkbox = filterMenu.querySelector('.news-filter-checkbox[value="' + tag.trim() + '"]');
+            if (checkbox) {
+                checkbox.checked = true;
+            }
+        });
+    }
+});
+</script>

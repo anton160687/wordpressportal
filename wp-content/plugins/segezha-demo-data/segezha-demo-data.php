@@ -329,14 +329,17 @@ class Segezha_Demo_Data {
 			}
 			
 			// Добавляем теги (1-3 организации)
-			$selected_tags = array_rand( $org_tags, rand( 1, 3 ) );
-			if ( ! is_array( $selected_tags ) ) {
-				$selected_tags = array( $selected_tags );
+			$tag_slugs = array_keys( $org_tags );
+			$count = min( rand( 1, 3 ), count( $tag_slugs ) );
+			$selected_indices = array_rand( $tag_slugs, $count );
+			
+			if ( ! is_array( $selected_indices ) ) {
+				$selected_indices = array( $selected_indices );
 			}
 			
 			$tag_ids = array();
-			foreach ( $selected_tags as $index ) {
-				$tag_slug = array_keys( $org_tags )[ $index ];
+			foreach ( $selected_indices as $index ) {
+				$tag_slug = $tag_slugs[ $index ];
 				$tag = get_term_by( 'slug', $tag_slug, 'post_tag' );
 				if ( $tag ) {
 					$tag_ids[] = $tag->term_id;
