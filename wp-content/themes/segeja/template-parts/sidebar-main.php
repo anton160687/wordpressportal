@@ -316,128 +316,94 @@
                     <!--end::Header-->
                     <!--begin::Body-->
                     <div class="card-body pt-5">
-                        <!--begin::Item-->
-                        <div class="d-flex flex-stack">
-                            <!--begin::Symbol-->
-                            <div class="symbol symbol-40px me-5">
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/avatars/300-11.jpg" class="h-50 align-self-center" alt="">
-                            </div>
-                            <!--end::Symbol-->
-                            <!--begin::Section-->
-                            <div class="d-flex align-items-center flex-row-fluid flex-wrap">
-                                <!--begin:Author-->
-                                <div class="flex-grow-1 me-2">
-                                    <a href="pages/user-profile/overview.html" class="text-gray-800 text-hover-primary fs-6 fw-bold">Иванов Иван</a>
-                                    <span class="text-muted fw-semibold d-block fs-7">Отдел поддержки</span>
+                        <?php
+                        // Получаем дни рождения через плагин
+                        if (class_exists('Segezha_Birthday_Display')) {
+                            $current_user = wp_get_current_user();
+                            if ($current_user->ID) {
+                                // Получаем настройки фильтра пользователя
+                                $filter_settings = class_exists('Segezha_Filter_Settings') ? Segezha_Filter_Settings::get_instance() : null;
+                                $organization_tags = array();
+                                
+                                if ($filter_settings) {
+                                    $user_filters = $filter_settings->get_user_filter_settings($current_user->ID);
+                                    $organization_tags = !empty($user_filters['organizations']) ? $user_filters['organizations'] : array();
+                                }
+                                
+                                // Если фильтр не настроен, используем организации пользователя
+                                if (empty($organization_tags) && class_exists('Segezha_User_Organizations')) {
+                                    $user_orgs = Segezha_User_Organizations::get_instance()->get_user_organizations($current_user->ID);
+                                    $organization_tags = $user_orgs;
+                                }
+                                
+                                $birthday_manager = Segezha_Birthday_Manager::get_instance();
+                                $birthdays = $birthday_manager->get_birthdays_by_organizations($organization_tags, 6);
+                                
+                                if (!empty($birthdays)) {
+                                    $first = true;
+                                    foreach ($birthdays as $birthday) {
+                                        if (!$first) {
+                                            echo '<div class="separator separator-dashed my-4"></div>';
+                                        }
+                                        $first = false;
+                                        ?>
+                                        <!--begin::Item-->
+                                        <div class="d-flex flex-stack">
+                                            <!--begin::Symbol-->
+                                            <div class="symbol symbol-40px me-5">
+                                                <?php if (!empty($birthday['avatar'])) : ?>
+                                                    <img src="<?php echo esc_url($birthday['avatar']); ?>" class="h-50 align-self-center rounded" alt="<?php echo esc_attr($birthday['name']); ?>">
+                                                <?php else : ?>
+                                                    <div class="symbol-label bg-light-primary text-primary fw-bold fs-6">
+                                                        <?php echo esc_html(mb_substr($birthday['name'], 0, 1)); ?>
+                                                    </div>
+                                                <?php endif; ?>
+                                            </div>
+                                            <!--end::Symbol-->
+                                            <!--begin::Section-->
+                                            <div class="d-flex align-items-center flex-row-fluid flex-wrap">
+                                                <!--begin:Author-->
+                                                <div class="flex-grow-1 me-2">
+                                                    <a href="<?php echo esc_url(get_author_posts_url($birthday['user_id'])); ?>" class="text-gray-800 text-hover-primary fs-6 fw-bold">
+                                                        <?php echo esc_html($birthday['name']); ?>
+                                                    </a>
+                                                    <?php if (!empty($birthday['department'])) : ?>
+                                                        <span class="text-muted fw-semibold d-block fs-7"><?php echo esc_html($birthday['department']); ?></span>
+                                                    <?php endif; ?>
+                                                    <span class="text-primary fw-semibold d-block fs-7"><?php echo esc_html($birthday['birthday']); ?></span>
+                                                </div>
+                                                <!--end:Author-->
+                                                <!--begin:Action-->
+                                                <a href="#" class="btn btn-sm btn-light fs-8 fw-bold">Поздравить</a>
+                                                <!--end:Action-->
+                                            </div>
+                                            <!--end::Section-->
+                                        </div>
+                                        <!--end::Item-->
+                                        <?php
+                                    }
+                                } else {
+                                    ?>
+                                    <div class="text-center py-5">
+                                        <p class="text-muted">Нет предстоящих дней рождений</p>
+                                    </div>
+                                    <?php
+                                }
+                            } else {
+                                ?>
+                                <div class="text-center py-5">
+                                    <p class="text-muted">Войдите, чтобы видеть дни рождения коллег</p>
                                 </div>
-                                <!--end:Author-->
-                                <!--begin:Action-->
-                                <a href="pages/user-profile/overview.html" class="btn btn-sm btn-light fs-8 fw-bold">Поздравить</a>
-                                <!--end:Action-->
+                                <?php
+                            }
+                        } else {
+                            ?>
+                            <div class="text-center py-5">
+                                <p class="text-muted">Плагин дней рождений не активирован</p>
                             </div>
-                            <!--end::Section-->
-                        </div>
-                        <!--end::Item-->
-                        <!--begin::Separator-->
-                        <div class="separator separator-dashed my-4"></div>
-                        <!--end::Separator-->
-                        <!--begin::Item-->
-                        <div class="d-flex flex-stack">
-                            <!--begin::Symbol-->
-                            <div class="symbol symbol-40px me-5">
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/avatars/300-2.jpg" class="h-50 align-self-center" alt="">
-                            </div>
-                            <!--end::Symbol-->
-                            <!--begin::Section-->
-                            <div class="d-flex align-items-center flex-row-fluid flex-wrap">
-                                <!--begin:Author-->
-                                <div class="flex-grow-1 me-2">
-                                    <a href="pages/user-profile/overview.html" class="text-gray-800 text-hover-primary fs-6 fw-bold">Петрова Анна</a>
-                                    <span class="text-muted fw-semibold d-block fs-7">Подразделение 1С</span>
-                                </div>
-                                <!--end:Author-->
-                                <!--begin:Action-->
-                                <a href="pages/user-profile/overview.html" class="btn btn-sm btn-light fs-8 fw-bold">Поздравить</a>
-                                <!--end:Action-->
-                            </div>
-                            <!--end::Section-->
-                        </div>
-                        <!--end::Item-->
-                        <!--begin::Separator-->
-                        <div class="separator separator-dashed my-4"></div>
-                        <!--end::Separator-->
-                        <!--begin::Item-->
-                        <div class="d-flex flex-stack">
-                            <!--begin::Symbol-->
-                            <div class="symbol symbol-40px me-5">
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/avatars/300-7.jpg" class="h-50 align-self-center" alt="">
-                            </div>
-                            <!--end::Symbol-->
-                            <!--begin::Section-->
-                            <div class="d-flex align-items-center flex-row-fluid flex-wrap">
-                                <!--begin:Author-->
-                                <div class="flex-grow-1 me-2">
-                                    <a href="pages/user-profile/overview.html" class="text-gray-800 text-hover-primary fs-6 fw-bold">Попов Гавриил</a>
-                                    <span class="text-muted fw-semibold d-block fs-7">Главное подразделения отдела кадров</span>
-                                </div>
-                                <!--end:Author-->
-                                <!--begin:Action-->
-                                <a href="pages/user-profile/overview.html" class="btn btn-sm btn-light fs-8 fw-bold">Поздравить</a>
-                                <!--end:Action-->
-                            </div>
-                            <!--end::Section-->
-                        </div>
-                        <!--end::Item-->
-                        <!--begin::Separator-->
-                        <div class="separator separator-dashed my-4"></div>
-                        <!--end::Separator-->
-                        <!--begin::Item-->
-                        <div class="d-flex flex-stack">
-                            <!--begin::Symbol-->
-                            <div class="symbol symbol-40px me-5">
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/avatars/300-9.jpg" class="h-50 align-self-center" alt="">
-                            </div>
-                            <!--end::Symbol-->
-                            <!--begin::Section-->
-                            <div class="d-flex align-items-center flex-row-fluid flex-wrap">
-                                <!--begin:Author-->
-                                <div class="flex-grow-1 me-2">
-                                    <a href="pages/user-profile/overview.html" class="text-gray-800 text-hover-primary fs-6 fw-bold">Кукушкина Василиса</a>
-                                    <span class="text-muted fw-semibold d-block fs-7">Бухгалтерия</span>
-                                </div>
-                                <!--end:Author-->
-                                <!--begin:Action-->
-                                <a href="pages/user-profile/overview.html" class="btn btn-sm btn-light fs-8 fw-bold">Поздравить</a>
-                                <!--end:Action-->
-                            </div>
-                            <!--end::Section-->
-                        </div>
-                        <!--end::Item-->
-                        <!--begin::Separator-->
-                        <div class="separator separator-dashed my-4"></div>
-                        <!--end::Separator-->
-                        <!--begin::Item-->
-                        <div class="d-flex flex-stack">
-                            <!--begin::Symbol-->
-                            <div class="symbol symbol-40px me-5">
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/avatars/300-12.jpg" class="h-50 align-self-center" alt="">
-                            </div>
-                            <!--end::Symbol-->
-                            <!--begin::Section-->
-                            <div class="d-flex align-items-center flex-row-fluid flex-wrap">
-                                <!--begin:Author-->
-                                <div class="flex-grow-1 me-2">
-                                    <a href="pages/user-profile/overview.html" class="text-gray-800 text-hover-primary fs-6 fw-bold">Деревянкина Дана</a>
-                                    <span class="text-muted fw-semibold d-block fs-7">Отдел деревообработки</span>
-                                </div>
-                                <!--end:Author-->
-                                <!--begin:Action-->
-                                <a href="pages/user-profile/overview.html" class="btn btn-sm btn-light fs-8 fw-bold">Поздравить</a>
-                                <!--end:Action-->
-                            </div>
-                            <!--end::Section-->
-                        </div>
-                        <!--end::Item-->
+                            <?php
+                        }
+                        ?>
                     </div>
                     <!--end::Body-->
                 </div>
