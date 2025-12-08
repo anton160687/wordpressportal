@@ -164,6 +164,7 @@
                                 ['slug' => 'company-str', 'title' => 'Структура группы'],
                                 ['slug' => 'history', 'title' => 'История'],
                                 ['slug' => 'strategy', 'title' => 'Стратегия'],
+                                ['slug' => 'feeds', 'title' => 'Медиацентр'],
                             ];
                             $segeja_current_slug = '';
                             if (is_page()) {

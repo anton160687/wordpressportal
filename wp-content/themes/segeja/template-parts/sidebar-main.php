@@ -627,235 +627,24 @@
                             <span class="text-muted mt-1 fw-semibold fs-7">ООО Сегежа Цифровые Решения</span>
                         </h3>
                         <div class="card-toolbar">
-                            <!--begin::Menu-->
-                            <button type="button" class="btn btn-sm btn-icon btn-color-primary btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                <i class="ki-duotone ki-category fs-6">
+                            <!--begin::Filter button-->
+                            <a href="#" class="btn btn-sm btn-flex btn-secondary fw-bold" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" id="news-filter-trigger">
+                                <i class="ki-duotone ki-filter fs-6 text-muted me-1">
                                     <span class="path1"></span>
                                     <span class="path2"></span>
-                                    <span class="path3"></span>
-                                    <span class="path4"></span>
-                                </i>
-                            </button>
-                            <!--begin::Menu 3-->
-                            <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px py-3" data-kt-menu="true">
-                                <!--begin::Heading-->
-                                <div class="menu-item px-3">
-                                    <div class="menu-content text-muted pb-2 px-3 fs-7 text-uppercase">Payments</div>
-                                </div>
-                                <!--end::Heading-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <a href="#" class="menu-link px-3">Create Invoice</a>
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <a href="#" class="menu-link flex-stack px-3">Create Payment
-                                        <span class="ms-2" data-bs-toggle="tooltip" aria-label="Specify a target name for future usage and reference" data-bs-original-title="Specify a target name for future usage and reference" data-kt-initialized="1">
-																	<i class="ki-duotone ki-information fs-6">
-																		<span class="path1"></span>
-																		<span class="path2"></span>
-																		<span class="path3"></span>
-																	</i>
-																</span></a>
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <a href="#" class="menu-link px-3">Generate Bill</a>
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3" data-kt-menu-trigger="hover" data-kt-menu-placement="right-end">
-                                    <a href="#" class="menu-link px-3">
-                                        <span class="menu-title">Subscription</span>
-                                        <span class="menu-arrow"></span>
-                                    </a>
-                                    <!--begin::Menu sub-->
-                                    <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3">Plans</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3">Billing</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3">Statements</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu separator-->
-                                        <div class="separator my-2"></div>
-                                        <!--end::Menu separator-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <div class="menu-content px-3">
-                                                <!--begin::Switch-->
-                                                <label class="form-check form-switch form-check-custom form-check-solid">
-                                                    <!--begin::Input-->
-                                                    <input class="form-check-input w-30px h-20px" type="checkbox" value="1" checked="checked" name="notifications">
-                                                    <!--end::Input-->
-                                                    <!--end::Label-->
-                                                    <span class="form-check-label text-muted fs-6">Recuring</span>
-                                                    <!--end::Label-->
-                                                </label>
-                                                <!--end::Switch-->
-                                            </div>
-                                        </div>
-                                        <!--end::Menu item-->
-                                    </div>
-                                    <!--end::Menu sub-->
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3 my-1">
-                                    <a href="#" class="menu-link px-3">Settings</a>
-                                </div>
-                                <!--end::Menu item-->
-                            </div>
-                            <!--end::Menu 3-->
-                            <!--end::Menu-->
+                                </i>Фильтр</a>
+                            <?php segeja_render_news_filter('news-filter-menu-org'); ?>
+                            <!--end::Filter button-->
                         </div>
                     </div>
                     <!--end::Header-->
                     <!--begin::Body-->
-                    <div class="card-body pt-3">
-                        <!--begin::Item-->
-                        <div class="d-flex align-items-sm-center mb-7">
-                            <!--begin::Symbol-->
-                            <div class="symbol symbol-60px symbol-2by3 me-4">
-                                <div class="symbol-label" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/media/stock/600x400/img-17.jpg')"></div>
-                            </div>
-                            <!--end::Symbol-->
-                            <!--begin::Content-->
-                            <div class="d-flex flex-row-fluid align-items-center flex-wrap my-lg-0 me-2">
-                                <!--begin::Title-->
-                                <div class="flex-grow-1 my-lg-0 my-2 me-2">
-                                    <a href="#" class="text-gray-800 fw-bold text-hover-primary fs-6">Благотворительный сбор средств</a>
-                                    <span class="text-muted fw-semibold d-block pt-1">Волонтерское движение СЦР и ОЦО объявило благотвори...</span>
-                                </div>
-                                <!--end::Title-->
-                                <!--begin::Section-->
-                                <div class="d-flex align-items-center">
-                                    <div class="me-6">
-                                        <i class="fa fa-star-half-alt me-1 text-warning fs-5"></i>
-                                        <span class="text-gray-800 fw-bold">4.2</span>
-                                    </div>
-                                    <a href="#" class="btn btn-icon btn-light btn-sm border-0">
-                                        <i class="ki-duotone ki-arrow-right fs-2 text-primary">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                        </i>
-                                    </a>
-                                </div>
-                                <!--end::Section-->
-                            </div>
-                            <!--end::Content-->
-                        </div>
-                        <!--end::Item-->
-                        <!--begin::Item-->
-                        <div class="d-flex align-items-sm-center mb-7">
-                            <!--begin::Symbol-->
-                            <div class="symbol symbol-60px symbol-2by3 me-4">
-                                <div class="symbol-label" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/media/stock/600x400/img-10.jpg')"></div>
-                            </div>
-                            <!--end::Symbol-->
-                            <!--begin::Content-->
-                            <div class="d-flex flex-row-fluid align-items-center flex-wrap my-lg-0 me-2">
-                                <!--begin::Title-->
-                                <div class="flex-grow-1 my-lg-0 my-2 me-2">
-                                    <a href="#" class="text-gray-800 fw-bold text-hover-primary fs-6">Segezha Group вошла в группу «Золото»</a>
-                                    <span class="text-muted fw-semibold d-block pt-1">Segezha Group вошла в группу «Золото» рейтинга лучших ...</span>
-                                </div>
-                                <!--end::Title-->
-                                <!--begin::Section-->
-                                <div class="d-flex align-items-center">
-                                    <div class="me-6">
-                                        <i class="fa fa-star-half-alt me-1 text-warning fs-5"></i>
-                                        <span class="text-gray-800 fw-bold">5.0</span>
-                                    </div>
-                                    <a href="#" class="btn btn-icon btn-light btn-sm border-0">
-                                        <i class="ki-duotone ki-arrow-right fs-2 text-primary">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                        </i>
-                                    </a>
-                                </div>
-                                <!--end::Section-->
-                            </div>
-                            <!--end::Content-->
-                        </div>
-                        <!--end::Item-->
-                        <!--begin::Item-->
-                        <div class="d-flex align-items-sm-center mb-7">
-                            <!--begin::Symbol-->
-                            <div class="symbol symbol-60px symbol-2by3 me-4">
-                                <div class="symbol-label" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/media/stock/600x400/img-1.jpg')"></div>
-                            </div>
-                            <!--end::Symbol-->
-                            <!--begin::Content-->
-                            <div class="d-flex flex-row-fluid align-items-center flex-wrap my-lg-0 me-2">
-                                <!--begin::Title-->
-                                <div class="flex-grow-1 my-lg-0 my-2 me-2">
-                                    <a href="#" class="text-gray-800 fw-bold text-hover-primary fs-6">Благотворительный сбор средств</a>
-                                    <span class="text-muted fw-semibold d-block pt-1">Волонтерское движение СЦР и ОЦО объявило благотвори...</span>
-                                </div>
-                                <!--end::Title-->
-                                <!--begin::Section-->
-                                <div class="d-flex align-items-center">
-                                    <div class="me-6">
-                                        <i class="fa fa-star-half-alt me-1 text-warning fs-5"></i>
-                                        <span class="text-gray-800 fw-bold">5.7</span>
-                                    </div>
-                                    <a href="#" class="btn btn-icon btn-light btn-sm border-0">
-                                        <i class="ki-duotone ki-arrow-right fs-2 text-primary">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                        </i>
-                                    </a>
-                                </div>
-                                <!--end::Section-->
-                            </div>
-                            <!--end::Content-->
-                        </div>
-                        <!--end::Item-->
-                        <!--begin::Item-->
-                        <div class="d-flex align-items-sm-center">
-                            <!--begin::Symbol-->
-                            <div class="symbol symbol-60px symbol-2by3 me-4">
-                                <div class="symbol-label" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/media/stock/600x400/img-9.jpg')"></div>
-                            </div>
-                            <!--end::Symbol-->
-                            <!--begin::Content-->
-                            <div class="d-flex flex-row-fluid align-items-center flex-wrap my-lg-0 me-2">
-                                <!--begin::Title-->
-                                <div class="flex-grow-1 my-lg-0 my-2 me-2">
-                                    <a href="#" class="text-gray-800 fw-bold text-hover-primary fs-6">Segezha Group вошла в группу «Золото»</a>
-                                    <span class="text-muted fw-semibold d-block pt-1">Segezha Group вошла в группу «Золото» рейтинга лучших ...</span>
-                                </div>
-                                <!--end::Title-->
-                                <!--begin::Section-->
-                                <div class="d-flex align-items-center">
-                                    <div class="me-6">
-                                        <i class="fa fa-star-half-alt me-1 text-warning fs-5"></i>
-                                        <span class="text-gray-800 fw-bold">3.7</span>
-                                    </div>
-                                    <a href="#" class="btn btn-icon btn-light btn-sm border-0">
-                                        <i class="ki-duotone ki-arrow-right fs-2 text-primary">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                        </i>
-                                    </a>
-                                </div>
-                                <!--end::Section-->
-                            </div>
-                            <!--end::Content-->
-                        </div>
-                        <!--end::Item-->
+                    <div class="card-body pt-3" id="news-container-org">
+                        <?php 
+                        // Получаем выбранные теги из URL параметра или сессии
+                        $selected_tags = isset($_GET['news_tags']) ? explode(',', sanitize_text_field($_GET['news_tags'])) : array();
+                        segeja_render_news_list($selected_tags, 4); 
+                        ?>
                     </div>
                     <!--end::Body-->
                 </div>
@@ -877,235 +666,24 @@
                             <span class="text-muted mt-1 fw-semibold fs-7">ООО Сегежа Групп</span>
                         </h3>
                         <div class="card-toolbar">
-                            <!--begin::Menu-->
-                            <button type="button" class="btn btn-sm btn-icon btn-color-primary btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                <i class="ki-duotone ki-category fs-6">
+                            <!--begin::Filter button-->
+                            <a href="#" class="btn btn-sm btn-flex btn-secondary fw-bold" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" id="news-filter-trigger-company">
+                                <i class="ki-duotone ki-filter fs-6 text-muted me-1">
                                     <span class="path1"></span>
                                     <span class="path2"></span>
-                                    <span class="path3"></span>
-                                    <span class="path4"></span>
-                                </i>
-                            </button>
-                            <!--begin::Menu 3-->
-                            <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px py-3" data-kt-menu="true">
-                                <!--begin::Heading-->
-                                <div class="menu-item px-3">
-                                    <div class="menu-content text-muted pb-2 px-3 fs-7 text-uppercase">Payments</div>
-                                </div>
-                                <!--end::Heading-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <a href="#" class="menu-link px-3">Create Invoice</a>
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <a href="#" class="menu-link flex-stack px-3">Create Payment
-                                        <span class="ms-2" data-bs-toggle="tooltip" aria-label="Specify a target name for future usage and reference" data-bs-original-title="Specify a target name for future usage and reference" data-kt-initialized="1">
-																	<i class="ki-duotone ki-information fs-6">
-																		<span class="path1"></span>
-																		<span class="path2"></span>
-																		<span class="path3"></span>
-																	</i>
-																</span></a>
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <a href="#" class="menu-link px-3">Generate Bill</a>
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3" data-kt-menu-trigger="hover" data-kt-menu-placement="right-end">
-                                    <a href="#" class="menu-link px-3">
-                                        <span class="menu-title">Subscription</span>
-                                        <span class="menu-arrow"></span>
-                                    </a>
-                                    <!--begin::Menu sub-->
-                                    <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3">Plans</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3">Billing</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3">Statements</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu separator-->
-                                        <div class="separator my-2"></div>
-                                        <!--end::Menu separator-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <div class="menu-content px-3">
-                                                <!--begin::Switch-->
-                                                <label class="form-check form-switch form-check-custom form-check-solid">
-                                                    <!--begin::Input-->
-                                                    <input class="form-check-input w-30px h-20px" type="checkbox" value="1" checked="checked" name="notifications">
-                                                    <!--end::Input-->
-                                                    <!--end::Label-->
-                                                    <span class="form-check-label text-muted fs-6">Recuring</span>
-                                                    <!--end::Label-->
-                                                </label>
-                                                <!--end::Switch-->
-                                            </div>
-                                        </div>
-                                        <!--end::Menu item-->
-                                    </div>
-                                    <!--end::Menu sub-->
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3 my-1">
-                                    <a href="#" class="menu-link px-3">Settings</a>
-                                </div>
-                                <!--end::Menu item-->
-                            </div>
-                            <!--end::Menu 3-->
-                            <!--end::Menu-->
+                                </i>Фильтр</a>
+                            <?php segeja_render_news_filter('news-filter-menu-company'); ?>
+                            <!--end::Filter button-->
                         </div>
                     </div>
                     <!--end::Header-->
                     <!--begin::Body-->
-                    <div class="card-body pt-3">
-                        <!--begin::Item-->
-                        <div class="d-flex align-items-sm-center mb-7">
-                            <!--begin::Symbol-->
-                            <div class="symbol symbol-60px symbol-2by3 me-4">
-                                <div class="symbol-label" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/media/stock/600x400/img-17.jpg')"></div>
-                            </div>
-                            <!--end::Symbol-->
-                            <!--begin::Content-->
-                            <div class="d-flex flex-row-fluid align-items-center flex-wrap my-lg-0 me-2">
-                                <!--begin::Title-->
-                                <div class="flex-grow-1 my-lg-0 my-2 me-2">
-                                    <a href="#" class="text-gray-800 fw-bold text-hover-primary fs-6">Благотворительный сбор средств</a>
-                                    <span class="text-muted fw-semibold d-block pt-1">Волонтерское движение СЦР и ОЦО объявило благотвори...</span>
-                                </div>
-                                <!--end::Title-->
-                                <!--begin::Section-->
-                                <div class="d-flex align-items-center">
-                                    <div class="me-6">
-                                        <i class="fa fa-star-half-alt me-1 text-warning fs-5"></i>
-                                        <span class="text-gray-800 fw-bold">4.2</span>
-                                    </div>
-                                    <a href="#" class="btn btn-icon btn-light btn-sm border-0">
-                                        <i class="ki-duotone ki-arrow-right fs-2 text-primary">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                        </i>
-                                    </a>
-                                </div>
-                                <!--end::Section-->
-                            </div>
-                            <!--end::Content-->
-                        </div>
-                        <!--end::Item-->
-                        <!--begin::Item-->
-                        <div class="d-flex align-items-sm-center mb-7">
-                            <!--begin::Symbol-->
-                            <div class="symbol symbol-60px symbol-2by3 me-4">
-                                <div class="symbol-label" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/media/stock/600x400/img-10.jpg')"></div>
-                            </div>
-                            <!--end::Symbol-->
-                            <!--begin::Content-->
-                            <div class="d-flex flex-row-fluid align-items-center flex-wrap my-lg-0 me-2">
-                                <!--begin::Title-->
-                                <div class="flex-grow-1 my-lg-0 my-2 me-2">
-                                    <a href="#" class="text-gray-800 fw-bold text-hover-primary fs-6">Segezha Group вошла в группу «Золото»</a>
-                                    <span class="text-muted fw-semibold d-block pt-1">Segezha Group вошла в группу «Золото» рейтинга лучших ...</span>
-                                </div>
-                                <!--end::Title-->
-                                <!--begin::Section-->
-                                <div class="d-flex align-items-center">
-                                    <div class="me-6">
-                                        <i class="fa fa-star-half-alt me-1 text-warning fs-5"></i>
-                                        <span class="text-gray-800 fw-bold">5.0</span>
-                                    </div>
-                                    <a href="#" class="btn btn-icon btn-light btn-sm border-0">
-                                        <i class="ki-duotone ki-arrow-right fs-2 text-primary">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                        </i>
-                                    </a>
-                                </div>
-                                <!--end::Section-->
-                            </div>
-                            <!--end::Content-->
-                        </div>
-                        <!--end::Item-->
-                        <!--begin::Item-->
-                        <div class="d-flex align-items-sm-center mb-7">
-                            <!--begin::Symbol-->
-                            <div class="symbol symbol-60px symbol-2by3 me-4">
-                                <div class="symbol-label" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/media/stock/600x400/img-1.jpg')"></div>
-                            </div>
-                            <!--end::Symbol-->
-                            <!--begin::Content-->
-                            <div class="d-flex flex-row-fluid align-items-center flex-wrap my-lg-0 me-2">
-                                <!--begin::Title-->
-                                <div class="flex-grow-1 my-lg-0 my-2 me-2">
-                                    <a href="#" class="text-gray-800 fw-bold text-hover-primary fs-6">Благотворительный сбор средств</a>
-                                    <span class="text-muted fw-semibold d-block pt-1">Волонтерское движение СЦР и ОЦО объявило благотвори...</span>
-                                </div>
-                                <!--end::Title-->
-                                <!--begin::Section-->
-                                <div class="d-flex align-items-center">
-                                    <div class="me-6">
-                                        <i class="fa fa-star-half-alt me-1 text-warning fs-5"></i>
-                                        <span class="text-gray-800 fw-bold">5.7</span>
-                                    </div>
-                                    <a href="#" class="btn btn-icon btn-light btn-sm border-0">
-                                        <i class="ki-duotone ki-arrow-right fs-2 text-primary">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                        </i>
-                                    </a>
-                                </div>
-                                <!--end::Section-->
-                            </div>
-                            <!--end::Content-->
-                        </div>
-                        <!--end::Item-->
-                        <!--begin::Item-->
-                        <div class="d-flex align-items-sm-center">
-                            <!--begin::Symbol-->
-                            <div class="symbol symbol-60px symbol-2by3 me-4">
-                                <div class="symbol-label" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/media/stock/600x400/img-9.jpg')"></div>
-                            </div>
-                            <!--end::Symbol-->
-                            <!--begin::Content-->
-                            <div class="d-flex flex-row-fluid align-items-center flex-wrap my-lg-0 me-2">
-                                <!--begin::Title-->
-                                <div class="flex-grow-1 my-lg-0 my-2 me-2">
-                                    <a href="#" class="text-gray-800 fw-bold text-hover-primary fs-6">Segezha Group вошла в группу «Золото»</a>
-                                    <span class="text-muted fw-semibold d-block pt-1">Segezha Group вошла в группу «Золото» рейтинга лучших ...</span>
-                                </div>
-                                <!--end::Title-->
-                                <!--begin::Section-->
-                                <div class="d-flex align-items-center">
-                                    <div class="me-6">
-                                        <i class="fa fa-star-half-alt me-1 text-warning fs-5"></i>
-                                        <span class="text-gray-800 fw-bold">3.7</span>
-                                    </div>
-                                    <a href="#" class="btn btn-icon btn-light btn-sm border-0">
-                                        <i class="ki-duotone ki-arrow-right fs-2 text-primary">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                        </i>
-                                    </a>
-                                </div>
-                                <!--end::Section-->
-                            </div>
-                            <!--end::Content-->
-                        </div>
-                        <!--end::Item-->
+                    <div class="card-body pt-3" id="news-container-company">
+                        <?php 
+                        // Получаем выбранные теги из URL параметра или сессии
+                        $selected_tags = isset($_GET['news_tags_company']) ? explode(',', sanitize_text_field($_GET['news_tags_company'])) : array();
+                        segeja_render_news_list($selected_tags, 4); 
+                        ?>
                     </div>
                     <!--end::Body-->
                 </div>
@@ -2005,3 +1583,59 @@
     </div>
     <!--end::Content container-->
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Обработчик для фильтра новостей организации
+    const filterTriggerOrg = document.getElementById('news-filter-trigger');
+    const filterMenuOrg = document.getElementById('news-filter-menu-org');
+    const newsContainerOrg = document.getElementById('news-container-org');
+    
+    if (filterTriggerOrg && filterMenuOrg) {
+        const applyButtonOrg = filterMenuOrg.querySelector('#apply-news-filter');
+        
+        if (applyButtonOrg) {
+            applyButtonOrg.addEventListener('click', function(e) {
+                e.preventDefault();
+                const selectedTags = Array.from(filterMenuOrg.querySelectorAll('.news-filter-checkbox:checked'))
+                    .map(checkbox => checkbox.value);
+                
+                // Обновляем URL с параметрами фильтра
+                const url = new URL(window.location.href);
+                if (selectedTags.length > 0) {
+                    url.searchParams.set('news_tags', selectedTags.join(','));
+                } else {
+                    url.searchParams.delete('news_tags');
+                }
+                window.location.href = url.toString();
+            });
+        }
+    }
+    
+    // Обработчик для фильтра новостей компании
+    const filterTriggerCompany = document.getElementById('news-filter-trigger-company');
+    const filterMenuCompany = document.getElementById('news-filter-menu-company');
+    const newsContainerCompany = document.getElementById('news-container-company');
+    
+    if (filterTriggerCompany && filterMenuCompany) {
+        const applyButtonCompany = filterMenuCompany.querySelector('#apply-news-filter');
+        
+        if (applyButtonCompany) {
+            applyButtonCompany.addEventListener('click', function(e) {
+                e.preventDefault();
+                const selectedTags = Array.from(filterMenuCompany.querySelectorAll('.news-filter-checkbox:checked'))
+                    .map(checkbox => checkbox.value);
+                
+                // Обновляем URL с параметрами фильтра
+                const url = new URL(window.location.href);
+                if (selectedTags.length > 0) {
+                    url.searchParams.set('news_tags_company', selectedTags.join(','));
+                } else {
+                    url.searchParams.delete('news_tags_company');
+                }
+                window.location.href = url.toString();
+            });
+        }
+    }
+});
+</script>

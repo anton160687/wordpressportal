@@ -1,6 +1,6 @@
 <!--begin::Wrapper-->
 
-<div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+<div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper" >
 <!--begin::Sidebar-->
             <div id="kt_app_sidebar" class="app-sidebar flex-column" data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="225px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
                 <!--begin::Logo-->
@@ -342,7 +342,7 @@
                         <!--begin::Secondary button-->
                         <!--end::Secondary button-->
                         <!--begin::Primary button-->
-                        <a href="#" class="btn btn-sm fw-bold btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app">Добавить</a>
+                        <a href="https://portal-stage.segezha-group.com/auth/sso.php " class="btn btn-sm fw-bold btn-primary" >Войти</a>
                         <!--end::Primary button-->
                     </div>
                     <!--end::Actions-->
