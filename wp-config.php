@@ -48,6 +48,9 @@ define('WP_DEBUG_DISPLAY', true);
 // Показываем все ошибки PHP
 @ini_set('display_errors', 1);
 
+// Принудительно используем прямую файловую систему вместо FTP
+define('FS_METHOD', 'direct');
+
 /**
  * Authentication Unique Keys and Salts.
  *
