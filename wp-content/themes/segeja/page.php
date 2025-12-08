@@ -6,6 +6,7 @@ $landing_templates = [
     'page-company-str.php',
     'page-history.php',
     'page-strategy.php',
+    'page-feeds.php',
 ];
 
 if (is_page_template($landing_templates)) {

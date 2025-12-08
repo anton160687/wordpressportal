@@ -243,73 +243,91 @@
                     <!--end::Catigories-->
                     <!--begin::Recent posts-->
                     <div class="m-0">
-                        <h4 class="text-gray-900 mb-7">Недавние публикации</h4>
-                        <!--begin::Item-->
                         <div class="d-flex flex-stack mb-7">
-                            <!--begin::Symbol-->
-                            <div class="symbol symbol-60px symbol-2by3 me-4">
-                                <div class="symbol-label" style="background-image: url('https://segezha-group.com/upload/resize_cache/iblock/755/236_269_2/3z7rabxra7u576qgl5lkbzapg0jybv3q.jpg')"></div>
-                            </div>
-                            <!--end::Symbol-->
-                            <!--begin::Title-->
-                            <div class="m-0">
-                                <a href="https://segezha-group.com/press-center/news/?focus=mexico" class="text-gray-900 fw-bold text-hover-primary fs-6" target="_blank" rel="noopener noreferrer">Новые поставки фанеры в Мексику</a>
-                                <span class="text-gray-600 fw-semibold d-block pt-1 fs-7">Первая партия берёзовой фанеры отправлена на рынок Латинской Америки.</span>
-                            </div>
-                            <!--end::Title-->
+                            <h4 class="text-gray-900">Недавние публикации</h4>
+                            <!--begin::Filter button-->
+                            <a href="#" class="btn btn-sm btn-flex btn-secondary fw-bold" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" id="news-filter-trigger-post">
+                                <i class="ki-duotone ki-filter fs-6 text-muted me-1">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                </i>Фильтр</a>
+                            <?php segeja_render_news_filter('news-filter-menu-post'); ?>
+                            <!--end::Filter button-->
                         </div>
-                        <!--end::Item-->
-                        <!--begin::Item-->
-                        <div class="d-flex flex-stack mb-7">
-                            <!--begin::Symbol-->
-                            <div class="symbol symbol-60px symbol-2by3 me-4">
-                                <div class="symbol-label" style="background-image: url('https://segezha-group.com/upload/resize_cache/iblock/48e/236_269_2/y6g9nu1whhh5nk5pwmstxq089fs970r6.jpg')"></div>
-                            </div>
-                            <!--end::Symbol-->
-                            <!--begin::Title-->
-                            <div class="m-0">
-                                <a href="https://segezha-group.com/press-center/news/?focus=logistics" class="text-gray-900 fw-bold text-hover-primary fs-6" target="_blank" rel="noopener noreferrer">Оптимизация логистики в Приангарье</a>
-                                <span class="text-gray-600 fw-semibold d-block pt-1 fs-7">Комплекс завершил проект по ускорению отгрузки готовой продукции.</span>
-                            </div>
-                            <!--end::Title-->
+                        <div id="news-container-post">
+                            <?php 
+                            // Получаем выбранные теги из URL параметра
+                            $selected_tags = isset($_GET['news_tags_post']) ? explode(',', sanitize_text_field($_GET['news_tags_post'])) : array();
+                            $news_query = segeja_get_news_by_tags($selected_tags, 4);
+                            
+                            if ($news_query->have_posts()) {
+                                while ($news_query->have_posts()) {
+                                    $news_query->the_post();
+                                    $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
+                                    if (!$thumbnail_url) {
+                                        $thumbnail_url = get_stylesheet_directory_uri() . '/assets/media/stock/600x400/img-1.jpg';
+                                    }
+                                    ?>
+                                    <div class="d-flex flex-stack mb-7">
+                                        <!--begin::Symbol-->
+                                        <div class="symbol symbol-60px symbol-2by3 me-4">
+                                            <div class="symbol-label" style="background-image: url('<?php echo esc_url($thumbnail_url); ?>')"></div>
+                                        </div>
+                                        <!--end::Symbol-->
+                                        <!--begin::Title-->
+                                        <div class="m-0">
+                                            <a href="<?php echo esc_url(get_permalink()); ?>" class="text-gray-900 fw-bold text-hover-primary fs-6"><?php echo esc_html(get_the_title()); ?></a>
+                                            <span class="text-gray-600 fw-semibold d-block pt-1 fs-7"><?php echo esc_html(wp_trim_words(get_the_excerpt(), 15)); ?></span>
+                                        </div>
+                                        <!--end::Title-->
+                                    </div>
+                                    <?php
+                                }
+                                wp_reset_postdata();
+                            } else {
+                                ?>
+                                <div class="text-center py-10">
+                                    <p class="text-muted">Новости не найдены</p>
+                                </div>
+                                <?php
+                            }
+                            ?>
                         </div>
-                        <!--end::Item-->
-                        <!--begin::Item-->
-                        <div class="d-flex flex-stack mb-7">
-                            <!--begin::Symbol-->
-                            <div class="symbol symbol-60px symbol-2by3 me-4">
-                                <div class="symbol-label" style="background-image: url('https://segezha-group.com/upload/resize_cache/iblock/76b/236_269_2/icu3l55z7cgist48yg0a1ut5jp9l6tni.jpg')"></div>
-                            </div>
-                            <!--end::Symbol-->
-                            <!--begin::Title-->
-                            <div class="m-0">
-                                <a href="https://segezha-group.com/press-center/news/?focus=tunisia" class="text-gray-900 fw-bold text-hover-primary fs-6" target="_blank" rel="noopener noreferrer">Контракт на поставку в Тунис</a>
-                                <span class="text-gray-600 fw-semibold d-block pt-1 fs-7">Segezha Group выполнила первый экспортный контракт в Северную Африку.</span>
-                            </div>
-                            <!--end::Title-->
-                        </div>
-                        <!--end::Item-->
-                        <!--begin::Item-->
-                        <div class="d-flex flex-stack">
-                            <!--begin::Symbol-->
-                            <div class="symbol symbol-60px symbol-2by3 me-4">
-                                <div class="symbol-label" style="background-image: url('https://segezha-group.com/upload/resize_cache/iblock/ed0/241_260_0/vaxjhe5jkyinvum11vjfvnsyy9tlcovt.png')"></div>
-                            </div>
-                            <!--end::Symbol-->
-                            <!--begin::Title-->
-                            <div class="m-0">
-                                <a href="https://segezha-group.com/press-center/news/?focus=clt" class="text-gray-900 fw-bold text-hover-primary fs-6" target="_blank" rel="noopener noreferrer">Развитие CLT-компетенций</a>
-                                <span class="text-gray-600 fw-semibold d-block pt-1 fs-7">Холдинг укрепляет лидерство по домокомплектам из клеёного бруса.</span>
-                            </div>
-                            <!--end::Title-->
-                        </div>
-                        <!--end::Item-->
                     </div>
                     <!--end::Recent posts-->
                 </div>
                 <!--end::Sidebar-->
             </div>
             <!--end::Layout-->
+            
+            <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Обработчик для фильтра новостей в sidebar-post
+                const filterTriggerPost = document.getElementById('news-filter-trigger-post');
+                const filterMenuPost = document.getElementById('news-filter-menu-post');
+                
+                if (filterTriggerPost && filterMenuPost) {
+                    const applyButtonPost = filterMenuPost.querySelector('#apply-news-filter');
+                    
+                    if (applyButtonPost) {
+                        applyButtonPost.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            const selectedTags = Array.from(filterMenuPost.querySelectorAll('.news-filter-checkbox:checked'))
+                                .map(checkbox => checkbox.value);
+                            
+                            // Обновляем URL с параметрами фильтра
+                            const url = new URL(window.location.href);
+                            if (selectedTags.length > 0) {
+                                url.searchParams.set('news_tags_post', selectedTags.join(','));
+                            } else {
+                                url.searchParams.delete('news_tags_post');
+                            }
+                            window.location.href = url.toString();
+                        });
+                    }
+                }
+            });
+            </script>
             <!--begin::Section-->
             <div class="mb-17">
                 <!--begin::Content-->

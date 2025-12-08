@@ -8,8 +8,31 @@
                     <!--begin: Pic-->
                     <div class="me-7 mb-4">
                         <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/media/avatars/300-1.jpg" alt="изображение">
+                            <?php
+                            $current_user = wp_get_current_user();
+                            $fields_manager = Segezha_User_Fields_Manager::get_instance();
+                            
+                            // Получаем картинку пользователя (приоритет: пользовательская, затем внешняя, затем дефолтная)
+                            $user_image_id = $fields_manager->get_user_field($current_user->ID, 'user_image_id');
+                            $external_image_url = $fields_manager->get_user_field($current_user->ID, 'external_image_url');
+                            
+                            $avatar_url = '';
+                            if ($user_image_id) {
+                                $avatar_url = wp_get_attachment_image_url($user_image_id, 'thumbnail');
+                            } elseif ($external_image_url) {
+                                $avatar_url = esc_url($external_image_url);
+                            } else {
+                                $avatar_url = get_stylesheet_directory_uri() . '/assets/media/avatars/300-1.jpg';
+                            }
+                            ?>
+                            <img src="<?php echo esc_url($avatar_url); ?>" alt="<?php echo esc_attr($current_user->display_name); ?>" id="user-avatar-img">
                             <div class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-body h-20px w-20px"></div>
+                            <button type="button" class="btn btn-sm btn-icon btn-light-primary position-absolute top-0 end-0" id="upload-avatar-btn" title="Изменить фото">
+                                <i class="ki-duotone ki-pencil fs-6">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                </i>
+                            </button>
                         </div>
                     </div>
                     <!--end::Pic-->
@@ -21,7 +44,7 @@
                             <div class="d-flex flex-column">
                                 <!--begin::Name-->
                                 <div class="d-flex align-items-center mb-2">
-                                    <a href="#" class="text-gray-900 text-hover-primary fs-2 fw-bold me-1">Антон Хохлачев</a>
+                                    <a href="#" class="text-gray-900 text-hover-primary fs-2 fw-bold me-1"><?php echo esc_html($current_user->display_name); ?></a>
                                     <a href="#">
                                         <i class="ki-duotone ki-verify fs-1 text-primary">
                                             <span class="path1"></span>
@@ -32,22 +55,34 @@
                                 <!--end::Name-->
                                 <!--begin::Info-->
                                 <div class="d-flex flex-wrap fw-semibold fs-6 mb-4 pe-2">
+                                    <?php
+                                    $position = $fields_manager->get_user_field($current_user->ID, 'position');
+                                    if ($position) :
+                                    ?>
                                     <a href="#" class="d-flex align-items-center text-gray-500 text-hover-primary me-5 mb-2">
                                         <i class="ki-duotone ki-profile-circle fs-4 me-1">
                                             <span class="path1"></span>
                                             <span class="path2"></span>
                                             <span class="path3"></span>
-                                        </i>Разработчик</a>
+                                        </i><?php echo esc_html($position); ?></a>
+                                    <?php endif; ?>
+                                    
+                                    <?php
+                                    $department = $fields_manager->get_user_field($current_user->ID, 'department_name');
+                                    if ($department) :
+                                    ?>
                                     <a href="#" class="d-flex align-items-center text-gray-500 text-hover-primary me-5 mb-2">
                                         <i class="ki-duotone ki-geolocation fs-4 me-1">
                                             <span class="path1"></span>
                                             <span class="path2"></span>
-                                        </i>Сан-Франциско, район залива</a>
-                                    <a href="#" class="d-flex align-items-center text-gray-500 text-hover-primary mb-2">
+                                        </i><?php echo esc_html($department); ?></a>
+                                    <?php endif; ?>
+                                    
+                                    <a href="mailto:<?php echo esc_attr($current_user->user_email); ?>" class="d-flex align-items-center text-gray-500 text-hover-primary mb-2">
                                         <i class="ki-duotone ki-sms fs-4 me-1">
                                             <span class="path1"></span>
                                             <span class="path2"></span>
-                                        </i>max@kt.com</a>
+                                        </i><?php echo esc_html($current_user->user_email); ?></a>
                                 </div>
                                 <!--end::Info-->
                             </div>
@@ -170,10 +205,20 @@
                                     <!--begin::Info-->
                                     <div class="flex-grow-1">
                                         <!--begin::Name-->
-                                        <a href="#" class="text-gray-800 text-hover-primary fs-4 fw-bold">Подразделение 1С</a>
+                                        <?php
+                                        $organization = $fields_manager->get_user_field($current_user->ID, 'organization_name');
+                                        if ($organization) :
+                                        ?>
+                                        <a href="#" class="text-gray-800 text-hover-primary fs-4 fw-bold"><?php echo esc_html($organization); ?></a>
                                         <!--end::Name-->
                                         <!--begin::Date-->
-                                        <span class="text-gray-500 fw-semibold d-block">Разработчик ПО</span>
+                                        <?php
+                                        $position_display = $fields_manager->get_user_field($current_user->ID, 'position');
+                                        if ($position_display) :
+                                        ?>
+                                        <span class="text-gray-500 fw-semibold d-block"><?php echo esc_html($position_display); ?></span>
+                                        <?php endif; ?>
+                                        <?php endif; ?>
                                         <!--end::Date-->
                                     </div>
                                     <!--end::Info-->
@@ -294,6 +339,43 @@
                         panel.classList.toggle('active', isTarget);
                     });
                 });
+
+                // Обработчик загрузки аватара
+                var uploadBtn = document.getElementById('upload-avatar-btn');
+                if (uploadBtn) {
+                    uploadBtn.addEventListener('click', function() {
+                        var fileInput = document.createElement('input');
+                        fileInput.type = 'file';
+                        fileInput.accept = 'image/*';
+                        fileInput.onchange = function(e) {
+                            var file = e.target.files[0];
+                            if (!file) return;
+
+                            var formData = new FormData();
+                            formData.append('action', 'segezha_upload_user_avatar');
+                            formData.append('file', file);
+                            formData.append('nonce', '<?php echo wp_create_nonce('segezha_upload_avatar'); ?>');
+
+                            var xhr = new XMLHttpRequest();
+                            xhr.open('POST', '<?php echo admin_url('admin-ajax.php'); ?>', true);
+                            xhr.onload = function() {
+                                if (xhr.status === 200) {
+                                    var response = JSON.parse(xhr.responseText);
+                                    if (response.success) {
+                                        document.getElementById('user-avatar-img').src = response.data.url;
+                                        alert('Фото успешно обновлено!');
+                                    } else {
+                                        alert('Ошибка: ' + (response.data.message || 'Не удалось загрузить фото'));
+                                    }
+                                } else {
+                                    alert('Ошибка загрузки файла');
+                                }
+                            };
+                            xhr.send(formData);
+                        };
+                        fileInput.click();
+                    });
+                }
             });
         </script>
 
