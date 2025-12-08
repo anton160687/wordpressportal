@@ -68,10 +68,20 @@ class Segezha_Birthdays {
 	 * @return void
 	 */
 	private function load_dependencies() {
-		require_once SEGEZHA_BIRTHDAYS_PLUGIN_DIR . 'includes/class-birthday-manager.php';
-		require_once SEGEZHA_BIRTHDAYS_PLUGIN_DIR . 'includes/class-birthday-display.php';
-		require_once SEGEZHA_BIRTHDAYS_PLUGIN_DIR . 'includes/class-user-organizations.php';
-		require_once SEGEZHA_BIRTHDAYS_PLUGIN_DIR . 'includes/class-filter-settings.php';
+		$includes_dir = SEGEZHA_BIRTHDAYS_PLUGIN_DIR . 'includes/';
+		
+		if ( file_exists( $includes_dir . 'class-birthday-manager.php' ) ) {
+			require_once $includes_dir . 'class-birthday-manager.php';
+		}
+		if ( file_exists( $includes_dir . 'class-birthday-display.php' ) ) {
+			require_once $includes_dir . 'class-birthday-display.php';
+		}
+		if ( file_exists( $includes_dir . 'class-user-organizations.php' ) ) {
+			require_once $includes_dir . 'class-user-organizations.php';
+		}
+		if ( file_exists( $includes_dir . 'class-filter-settings.php' ) ) {
+			require_once $includes_dir . 'class-filter-settings.php';
+		}
 	}
 
 	/**
@@ -92,16 +102,24 @@ class Segezha_Birthdays {
 	 */
 	public function init() {
 		// Инициализируем менеджер дней рождений
-		Segezha_Birthday_Manager::get_instance();
+		if ( class_exists( 'Segezha_Birthday_Manager' ) ) {
+			Segezha_Birthday_Manager::get_instance();
+		}
 
 		// Инициализируем отображение дней рождений
-		Segezha_Birthday_Display::get_instance();
+		if ( class_exists( 'Segezha_Birthday_Display' ) ) {
+			Segezha_Birthday_Display::get_instance();
+		}
 
 		// Инициализируем управление организациями пользователя
-		Segezha_User_Organizations::get_instance();
+		if ( class_exists( 'Segezha_User_Organizations' ) ) {
+			Segezha_User_Organizations::get_instance();
+		}
 
 		// Инициализируем настройки фильтрации
-		Segezha_Filter_Settings::get_instance();
+		if ( class_exists( 'Segezha_Filter_Settings' ) ) {
+			Segezha_Filter_Settings::get_instance();
+		}
 	}
 
 	/**

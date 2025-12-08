@@ -37,6 +37,17 @@ define( 'DB_CHARSET', 'utf8' );
 /** The Database Collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
 
+// Включаем отображение всех ошибок PHP
+define('WP_DEBUG', true);
+
+// Записываем ошибки в журнал
+define('WP_DEBUG_LOG', true);
+
+// Включаем отображение сообщений об ошибках на экране (для отладки)
+define('WP_DEBUG_DISPLAY', true);
+// Показываем все ошибки PHP
+@ini_set('display_errors', 1);
+
 /**
  * Authentication Unique Keys and Salts.
  *
