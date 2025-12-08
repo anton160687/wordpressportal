@@ -1,70 +1,37 @@
 <?php
-$birthday_filters = [
-    'organizations' => [
-        [
-            'value' => 'all',
-            'label' => 'Все организации',
-        ],
-        [
-            'value' => 'segeja',
-            'label' => 'ГК «Сегея»',
-        ],
-        [
-            'value' => 'integral',
-            'label' => 'ООО «Интеграл»',
-        ],
-    ],
-    'departments'   => [
-        [
-            'value' => 'all',
-            'label' => 'Все подразделения',
-        ],
-        [
-            'value' => 'digital',
-            'label' => 'Дирекция цифровых решений',
-        ],
-        [
-            'value' => 'marketing',
-            'label' => 'Маркетинг и коммуникации',
-        ],
-        [
-            'value' => 'hr',
-            'label' => 'HR и корпоративная культура',
-        ],
-    ],
-];
+$current_user = wp_get_current_user();
+$birthday_colleagues = array();
 
-$birthday_colleagues = [
-    [
-        'name'         => 'Анна Морозова',
-        'position'     => 'Руководитель проектов',
-        'department'   => 'Дирекция цифровых решений',
-        'organization' => 'ГК «Сегея»',
-        'birthday'     => '14 февраля',
-        'photo'        => get_stylesheet_directory_uri() . '/assets/media/avatars/300-11.jpg',
-        'status'       => 'available',
-    ],
-    [
-        'name'         => 'Дмитрий Крылов',
-        'position'     => 'Ведущий разработчик',
-        'department'   => 'Маркетинг и коммуникации',
-        'organization' => 'ООО «Интеграл»',
-        'birthday'     => '15 февраля',
-        'photo'        => get_stylesheet_directory_uri() . '/assets/media/avatars/300-6.jpg',
-        'status'       => 'offline',
-    ],
-    [
-        'name'         => 'Екатерина Лисицина',
-        'position'     => 'HR Business Partner',
-        'department'   => 'HR и корпоративная культура',
-        'organization' => 'ГК «Сегея»',
-        'birthday'     => '18 февраля',
-        'photo'        => '',
-        'status'       => 'available',
-    ],
-];
+if ($current_user->ID && class_exists('Segezha_Birthday_Manager')) {
+    // Получаем дни рождения коллег из подразделения
+    $birthday_manager = Segezha_Birthday_Manager::get_instance();
+    $department_birthdays = $birthday_manager->get_department_birthdays($current_user->ID, 10);
+    
+    // Получаем дни рождения руководителей
+    $managers_birthdays = $birthday_manager->get_managers_birthdays($current_user->ID, 10);
+    
+    // Объединяем
+    $all_birthdays = array_merge($department_birthdays, $managers_birthdays);
+    
+    // Удаляем дубликаты
+    $unique_birthdays = array();
+    $seen_ids = array();
+    foreach ($all_birthdays as $birthday) {
+        if (!in_array($birthday['user_id'], $seen_ids, true)) {
+            $unique_birthdays[] = $birthday;
+            $seen_ids[] = $birthday['user_id'];
+        }
+    }
+    
+    // Сортируем по дате
+    usort($unique_birthdays, function($a, $b) {
+        return $a['days_until'] - $b['days_until'];
+    });
+    
+    $birthday_colleagues = $unique_birthdays;
+}
 
-$birthday_total = count( $birthday_colleagues );
+$birthday_total = count($birthday_colleagues);
 ?>
 
 <div class="card mb-5 mb-xl-10">
@@ -80,24 +47,10 @@ $birthday_total = count( $birthday_colleagues );
             </div>
             <div class="d-flex flex-wrap gap-4 my-2">
                 <div class="w-200px">
-                    <label class="form-label fw-semibold text-gray-700">Организация</label>
-                    <select class="form-select form-select-sm form-select-solid w-200px" data-control="select2" data-hide-search="true" data-placeholder="Выберите организацию">
-                        <?php foreach ( $birthday_filters['organizations'] as $organization ) : ?>
-                            <option value="<?php echo esc_attr( $organization['value'] ); ?>">
-                                <?php echo esc_html( $organization['label'] ); ?>
-                            </option>
-                        <?php endforeach; ?>
-                    </select>
+                    <label class="form-label fw-semibold text-gray-700">Коллеги из подразделения</label>
                 </div>
                 <div class="w-200px">
-                    <label class="form-label fw-semibold text-gray-700">Подразделение</label>
-                    <select class="form-select form-select-sm form-select-solid w-200px" data-control="select2" data-hide-search="true" data-placeholder="Выберите подразделение">
-                        <?php foreach ( $birthday_filters['departments'] as $department ) : ?>
-                            <option value="<?php echo esc_attr( $department['value'] ); ?>">
-                                <?php echo esc_html( $department['label'] ); ?>
-                            </option>
-                        <?php endforeach; ?>
-                    </select>
+                    <label class="form-label fw-semibold text-gray-700">Руководители</label>
                 </div>
             </div>
         </div>
@@ -105,45 +58,61 @@ $birthday_total = count( $birthday_colleagues );
 
         <!--begin::Row-->
         <div class="row g-6 mb-6 g-xl-9 mb-xl-9">
-            <?php foreach ( $birthday_colleagues as $colleague ) :
-                $initial = mb_substr( $colleague['name'], 0, 1 );
-                ?>
+            <?php 
+            if (!empty($birthday_colleagues)) :
+                foreach ($birthday_colleagues as $colleague) :
+                    $initial = mb_substr($colleague['name'], 0, 1);
+            ?>
                 <div class="col-md-6 col-xxl-4">
-                    <div class="card h-100" data-organization="<?php echo esc_attr( $colleague['organization'] ); ?>" data-department="<?php echo esc_attr( $colleague['department'] ); ?>">
+                    <div class="card h-100">
                         <div class="card-body d-flex flex-center flex-column text-center py-9 px-5">
                             <div class="symbol symbol-65px symbol-circle mb-5 position-relative">
-                                <?php if ( ! empty( $colleague['photo'] ) ) : ?>
-                                    <img src="<?php echo esc_url( $colleague['photo'] ); ?>" alt="<?php echo esc_attr( $colleague['name'] ); ?>">
+                                <?php if (!empty($colleague['avatar'])) : ?>
+                                    <img src="<?php echo esc_url($colleague['avatar']); ?>" alt="<?php echo esc_attr($colleague['name']); ?>">
                                 <?php else : ?>
                                     <span class="symbol-label fs-2x fw-semibold text-primary bg-light-primary">
-                                        <?php echo esc_html( mb_strtoupper( $initial ) ); ?>
+                                        <?php echo esc_html(mb_strtoupper($initial)); ?>
                                     </span>
                                 <?php endif; ?>
-                                <?php if ( 'available' === $colleague['status'] ) : ?>
-                                    <div class="bg-success position-absolute rounded-circle translate-middle start-100 top-100 border border-4 border-body h-15px w-15px ms-n3 mt-n3"></div>
-                                <?php else : ?>
-                                    <div class="bg-gray-400 position-absolute rounded-circle translate-middle start-100 top-100 border border-4 border-body h-15px w-15px ms-n3 mt-n3"></div>
-                                <?php endif; ?>
                             </div>
-                            <a href="#" class="fs-4 text-gray-900 text-hover-primary fw-bold mb-1">
-                                <?php echo esc_html( $colleague['name'] ); ?>
+                            <a href="<?php echo esc_url(get_author_posts_url($colleague['user_id'])); ?>" class="fs-4 text-gray-900 text-hover-primary fw-bold mb-1">
+                                <?php echo esc_html($colleague['name']); ?>
                             </a>
-                            <div class="fw-semibold text-gray-500 mb-4"><?php echo esc_html( $colleague['position'] ); ?></div>
+                            <?php if (!empty($colleague['position'])) : ?>
+                            <div class="fw-semibold text-gray-500 mb-4"><?php echo esc_html($colleague['position']); ?></div>
+                            <?php endif; ?>
                             <div class="d-flex flex-column align-items-center mb-4">
                                 <span class="badge badge-light-primary fs-7 fw-bold mb-2">
-                                    <?php echo esc_html( $colleague['birthday'] ); ?>
+                                    <?php echo esc_html($colleague['birthday']); ?>
                                 </span>
-                                <span class="text-gray-600 fw-semibold"><?php echo esc_html( $colleague['department'] ); ?></span>
-                                <span class="text-gray-500"><?php echo esc_html( $colleague['organization'] ); ?></span>
+                                <?php if (!empty($colleague['department'])) : ?>
+                                <span class="text-gray-600 fw-semibold"><?php echo esc_html($colleague['department']); ?></span>
+                                <?php endif; ?>
+                                <?php if (!empty($colleague['organization'])) : ?>
+                                <span class="text-gray-500"><?php echo esc_html($colleague['organization']); ?></span>
+                                <?php endif; ?>
                             </div>
                             <button class="btn btn-sm btn-light-primary btn-flex btn-center w-100">
-                                <i class="ki-duotone ki-message-text-2 fs-3 me-2"></i>
+                                <i class="ki-duotone ki-message-text-2 fs-3 me-2">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                    <span class="path3"></span>
+                                </i>
                                 Поздравить
                             </button>
                         </div>
                     </div>
                 </div>
-            <?php endforeach; ?>
+            <?php 
+                endforeach;
+            else :
+            ?>
+            <div class="col-12">
+                <div class="alert alert-info">
+                    <p class="mb-0">Нет предстоящих дней рождений коллег из вашего подразделения или руководителей.</p>
+                </div>
+            </div>
+            <?php endif; ?>
         </div>
         <!--end::Row-->
     </div>

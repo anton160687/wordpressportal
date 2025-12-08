@@ -856,7 +856,65 @@
 
 
 
+                        <!--begin::Filter menu-->
+                        <div class="app-navbar-item ms-1 ms-md-4">
+                            <!--begin::Menu toggle-->
+                            <a href="#" class="btn btn-sm btn-flex btn-secondary fw-bold" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" id="kt_header_news_filter_toggle">
+                                <i class="ki-duotone ki-filter fs-6 text-muted me-1">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                </i>Фильтр
+                            </a>
+                            <!--end::Menu toggle-->
+                            <!--begin::Menu-->
+                            <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_header_news_filter_menu">
+                                <!--begin::Header-->
+                                <div class="px-7 py-5">
+                                    <div class="fs-5 text-gray-900 fw-bold">Фильтр новостей</div>
+                                </div>
+                                <!--end::Header-->
+                                <!--begin::Menu separator-->
+                                <div class="separator border-gray-200"></div>
+                                <!--end::Menu separator-->
+                                <!--begin::Form-->
+                                <div class="px-7 py-5">
+                                    <!--begin::Input group-->
+                                    <div class="mb-10">
+                                        <!--begin::Label-->
+                                        <label class="form-label fw-semibold">Организации:</label>
+                                        <!--end::Label-->
+                                        <!--begin::Input-->
+                                        <div>
+                                            <?php segeja_render_news_filter('kt_header_news_filter_menu'); ?>
+                                        </div>
+                                        <!--end::Input-->
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Actions-->
+                                    <div class="d-flex justify-content-end">
+                                        <button type="button" class="btn btn-sm btn-light btn-active-light-primary me-2" id="clear-news-filter">Очистить</button>
+                                        <button type="button" class="btn btn-sm btn-primary" id="apply-news-filter">Применить</button>
+                                    </div>
+                                    <!--end::Actions-->
+                                </div>
+                                <!--end::Form-->
+                            </div>
+                            <!--end::Menu-->
+                        </div>
+                        <!--end::Filter menu-->
+                        
+                        <!--begin::Login button-->
+                        <?php if (!is_user_logged_in()) : ?>
+                        <div class="app-navbar-item ms-1 ms-md-4">
+                            <a href="<?php echo esc_url(wp_login_url()); ?>" class="btn btn-sm fw-bold btn-primary">
+                                Войти
+                            </a>
+                        </div>
+                        <?php endif; ?>
+                        <!--end::Login button-->
+                        
                         <!--begin::User menu-->
+                        <?php if (is_user_logged_in()) : ?>
                         <div class="app-navbar-item ms-1 ms-md-4" id="kt_header_user_menu_toggle">
                             <!--begin::Menu wrapper-->
                             <div class="cursor-pointer symbol symbol-35px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">

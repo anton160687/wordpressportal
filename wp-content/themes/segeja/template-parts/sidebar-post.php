@@ -13,6 +13,7 @@
                         <div class="mb-8">
                             <!--begin::Info-->
                             <div class="d-flex flex-wrap mb-6">
+                                <?php if (have_posts()) : the_post(); ?>
                                 <!--begin::Item-->
                                 <div class="me-9 my-1">
                                     <!--begin::Icon-->
@@ -24,10 +25,15 @@
                                     </i>
                                     <!--end::Icon-->
                                     <!--begin::Label-->
-                                    <span class="fw-bold text-gray-500">10 ноября 2025</span>
+                                    <span class="fw-bold text-gray-500"><?php echo get_the_date('d F Y'); ?></span>
                                     <!--end::Label-->
                                 </div>
                                 <!--end::Item-->
+                                <?php 
+                                $tags = get_the_tags();
+                                if ($tags) : 
+                                    foreach ($tags as $tag) :
+                                ?>
                                 <!--begin::Item-->
                                 <div class="me-9 my-1">
                                     <!--begin::Icon-->
@@ -37,10 +43,14 @@
                                     </i>
                                     <!--end::Icon-->
                                     <!--begin::Label-->
-                                    <span class="fw-bold text-gray-500">Новости компании</span>
-                                    <!--begin::Label-->
+                                    <span class="fw-bold text-gray-500"><?php echo esc_html($tag->name); ?></span>
+                                    <!--end::Label-->
                                 </div>
                                 <!--end::Item-->
+                                <?php 
+                                    endforeach;
+                                endif;
+                                ?>
                                 <!--begin::Item-->
                                 <div class="my-1">
                                     <!--begin::Icon-->
@@ -51,72 +61,74 @@
                                     </i>
                                     <!--end::Icon-->
                                     <!--begin::Label-->
-                                    <span class="fw-bold text-gray-500">24 комментария</span>
+                                    <span class="fw-bold text-gray-500"><?php echo get_comments_number(); ?> <?php echo _n('комментарий', 'комментария', get_comments_number(), 'segeja'); ?></span>
                                     <!--end::Label-->
                                 </div>
                                 <!--end::Item-->
                             </div>
                             <!--end::Info-->
                             <!--begin::Title-->
-                            <a href="https://segezha-group.com/press-center/news/" class="text-gray-900 text-hover-primary fs-2 fw-bold" target="_blank" rel="noopener noreferrer">Segezha Group: как ведущий лесопромышленный холдинг ускоряет устойчивый рост
-                                <span class="fw-bold text-muted fs-5 ps-1">5 минут на чтение</span></a>
+                            <h1 class="text-gray-900 text-hover-primary fs-2 fw-bold mb-3">
+                                <?php echo esc_html(get_the_title()); ?>
+                            </h1>
                             <!--end::Title-->
+                            <?php 
+                            $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
+                            if ($thumbnail_url) :
+                            ?>
                             <!--begin::Container-->
                             <div class="overlay mt-8">
                                 <!--begin::Image-->
-                                <div class="bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-350px" style="background-image:url('https://segezha-group.com/upload/resize_cache/iblock/028/472_269_2/p0xa2vo8w7k9t336gvh7h3ed68sp500x.jpg')"></div>
+                                <div class="bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-350px" style="background-image:url('<?php echo esc_url($thumbnail_url); ?>')"></div>
                                 <!--end::Image-->
-                                <!--begin::Links-->
-                                <div class="overlay-layer card-rounded bg-dark bg-opacity-25">
-                                    <a href="https://segezha-group.com/company/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">О компании</a>
-                                    <a href="https://segezha-group.com/career/" class="btn btn-light-primary ms-3" target="_blank" rel="noopener noreferrer">Присоединиться</a>
-                                </div>
-                                <!--end::Links-->
                             </div>
                             <!--end::Container-->
+                            <?php endif; ?>
                         </div>
                         <!--end::Wrapper-->
                         <!--begin::Description-->
                         <div class="fs-5 fw-semibold text-gray-600">
-                            <!--begin::Text-->
-                            <p class="mb-8">Segezha Group — ведущий международный лесопромышленный холдинг с полным циклом лесозаготовки и переработки древесины. Компания является крупнейшим лесопользователем в европейской части России и строит бизнес на экологичных технологиях глубокой переработки сырья, обеспечивая выпуск высокомаржинальной продукции и максимум безотходности.</p>
-                            <!--end::Text-->
-                            <!--begin::Text-->
-                            <p class="mb-8">По данным холдинга, Segezha Group занимает 1-е место в России по производству мешочной бумаги и CLT-панелей, 2-е место в мире по выпуску бумаги для многослойных мешков и 3-е место в мире по мощностям по производству берёзовой фанеры. Такие позиции достигаются благодаря модели комплексного использования древесины и постоянным инвестициям в модернизацию.</p>
-                            <!--end::Text-->
-                            <!--begin::Text-->
-                            <p class="mb-8">Фокус Segezha Group — устойчивое развитие: компания придерживается высоких стандартов ответственного лесопользования, развивает экологические и социальные программы и выстраивает культуру безопасности на предприятиях. География поставок превышает 80 стран, а команда насчитывает около 20&nbsp;800 сотрудников.</p>
-                            <!--end::Text-->
-                            <!--begin::Text-->
-                            <p class="mb-17">В 2025 году выручка холдинга достигла 107 млрд рублей, а рентабельность по OIBDA составила 23%. Segezha Group активно открывает новые рынки: поставки берёзовой фанеры стартовали в Мексику, реализованы первые контракты в Тунисе, а логистика продукции оптимизируется на Приангарском лесоперерабатывающем комплексе.</p>
-                            <!--end::Text-->
+                            <?php the_content(); ?>
                         </div>
                         <!--end::Description-->
+                        <?php 
+                        $author_id = get_the_author_meta('ID');
+                        $author_name = get_the_author();
+                        $author_avatar = get_avatar_url($author_id, array('size' => 70));
+                        $author_position = get_user_meta($author_id, 'segezha_position', true);
+                        ?>
                         <!--begin::Block-->
                         <div class="d-flex align-items-center border-1 border-dashed card-rounded p-5 p-lg-10 mb-14">
                             <!--begin::Section-->
                             <div class="text-center flex-shrink-0 me-7 me-lg-13">
                                 <!--begin::Avatar-->
                                 <div class="symbol symbol-70px symbol-circle mb-2">
-                                    <img src="assets/media/avatars/300-2.jpg" class="" alt="">
+                                    <img src="<?php echo esc_url($author_avatar); ?>" class="" alt="<?php echo esc_attr($author_name); ?>">
                                 </div>
                                 <!--end::Avatar-->
                                 <!--begin::Info-->
                                 <div class="mb-0">
-                                    <a href="https://segezha-group.com/sustainable-development/" class="text-gray-700 fw-bold text-hover-primary" target="_blank" rel="noopener noreferrer">Анна Иванова</a>
-                                    <span class="text-gray-500 fs-7 fw-semibold d-block mt-1">Руководитель по устойчивому развитию</span>
+                                    <a href="<?php echo esc_url(get_author_posts_url($author_id)); ?>" class="text-gray-700 fw-bold text-hover-primary">
+                                        <?php echo esc_html($author_name); ?>
+                                    </a>
+                                    <?php if ($author_position) : ?>
+                                    <span class="text-gray-500 fs-7 fw-semibold d-block mt-1"><?php echo esc_html($author_position); ?></span>
+                                    <?php endif; ?>
                                 </div>
                                 <!--end::Info-->
                             </div>
                             <!--end::Section-->
                             <!--begin::Text-->
                             <div class="mb-0 fs-6">
-                                <div class="text-muted fw-semibold lh-lg mb-2">Анна курирует корпоративные программы по ответственному лесопользованию и внедрению безотходных технологий, а также координирует проекты социальной поддержки в регионах присутствия.</div>
-                                <a href="https://segezha-group.com/sustainable-development/" class="fw-semibold link-primary" target="_blank" rel="noopener noreferrer">Профиль автора</a>
+                                <div class="text-muted fw-semibold lh-lg mb-2">
+                                    <?php echo esc_html(get_the_author_meta('description')); ?>
+                                </div>
+                                <a href="<?php echo esc_url(get_author_posts_url($author_id)); ?>" class="fw-semibold link-primary">Профиль автора</a>
                             </div>
                             <!--end::Text-->
                         </div>
                         <!--end::Block-->
+                        <?php endif; ?>
                         <!--begin::Icons-->
                         <div class="d-flex flex-center">
                             <!--begin::Icon-->
